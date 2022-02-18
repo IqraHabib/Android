@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="Resources.Listeners"></listener>
+		<listener class-name="Resources.ExtentReporterNG"></listener>
+	</listeners>  
+
+	<test name="Search">
+	    <classes>	
+			<class name="Search.NewBikeSearch"/>	
+	    </classes>
+	</test> 
+
+	<test name="Lead Forms">
+	    <classes>	
+			<class name="LeadForms.Insurance"/>
+			<class name="LeadForms.SellItForMe"/>
+	    </classes>
+	</test> 
+
+</suite> 

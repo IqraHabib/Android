@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Search</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">22,201</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Lead Forms</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">18,928</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num attn">5</th><th class="num">41,129</th><th colspan="2"></th></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Search &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Search.NewBikeSearch</td><td><a href="#m0">Scroll</a></td><td rowspan="1">1645102195297</td><td rowspan="1">2006</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Lead Forms &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">LeadForms.Insurance</td><td><a href="#m1">InsuranceRequest_WithLogin</a></td><td rowspan="1">1645102215096</td><td rowspan="1">1</td></tr><tr class="failedeven"><td><a href="#m2">InsuranceRequest_WithoutLogin</a></td><td rowspan="1">1645102213551</td><td rowspan="1">2</td></tr><tr class="failedodd"><td rowspan="2">LeadForms.SellItForMe</td><td><a href="#m3">SellItForMeRequest_WithLogin</a></td><td rowspan="1">1645102216421</td><td rowspan="1">1</td></tr><tr class="failedodd"><td><a href="#m4">SellItForMeRequest_WithoutLogin</a></td><td rowspan="1">1645102215823</td><td rowspan="1">1</td></tr></tbody>
+</table>
+<h2>Search</h2><h3 id="m0">Search.NewBikeSearch#Scroll</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
+	at Search.NewBikeSearch.Scroll(NewBikeSearch.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Lead Forms</h2><h3 id="m1">LeadForms.Insurance#InsuranceRequest_WithLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
+	at LeadForms.Insurance.InsuranceRequest_WithLogin(Insurance.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">LeadForms.Insurance#InsuranceRequest_WithoutLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
+	at LeadForms.Insurance.InsuranceRequest_WithoutLogin(Insurance.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">LeadForms.SellItForMe#SellItForMeRequest_WithLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
+	at LeadForms.SellItForMe.SellItForMeRequest_WithLogin(SellItForMe.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">LeadForms.SellItForMe#SellItForMeRequest_WithoutLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
+	at LeadForms.SellItForMe.SellItForMeRequest_WithoutLogin(SellItForMe.java:18)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>
