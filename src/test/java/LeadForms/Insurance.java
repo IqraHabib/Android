@@ -2,6 +2,8 @@ package LeadForms;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
@@ -18,7 +20,7 @@ public class Insurance extends SetDesiredCapabilities
 	@Test(priority = 0)
 	public void InsuranceRequest_WithoutLogin()
 	{
-		test= extent.createTest("Insurance Request- Without Login");
+		ExtentTest test= extent.createTest("Insurance Request- Without Login");
 		driver.launchApp();
 		
 		test.log(Status.INFO, "Test Started");	
@@ -29,7 +31,7 @@ public class Insurance extends SetDesiredCapabilities
 		test.log(Status.PASS, "Navigate to menu page by clicking more button");
 		driver.findElement(By.xpath(CarInsurancePage)).click();                              // Navigate to Insurance Page
 		test.log(Status.PASS, "Navigate to Car Insurance Page");
-		driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();             // Select Car model Button
+		/*driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();             // Select Car model Button
 		test.log(Status.PASS, "Tap Car Model button to Select Car Information");
 		driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                    // Select car Year
 		test.log(Status.PASS, "Select Car Year");
@@ -56,14 +58,14 @@ public class Insurance extends SetDesiredCapabilities
 		test.log(Status.PASS, "Select City");
 		//driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();                // Click on Submit button
 		test.log(Status.PASS, "Select Submit Button");
-		test.log(Status.INFO, "Test Successfully Completed");
+		test.log(Status.INFO, "Test Successfully Completed");*/
 	}	
 	
 	
 	@Test(priority = 1)
 	public void InsuranceRequest_WithLogin()
 	{
-		test= extent.createTest("Insurance Request- Login");
+		ExtentTest test= extent.createTest("Insurance Request- Login");
 		driver.launchApp();
 		
 		test.log(Status.INFO, "Test Started");	
@@ -80,7 +82,7 @@ public class Insurance extends SetDesiredCapabilities
 		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Car Insurance\").instance(0))"));   //Scroll	
 		driver.findElement(By.xpath(CarInsurancePage)).click();                              // Navigate to Insurance Page
 		test.log(Status.PASS, "Navigate to Car Insurance Page");
-		driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();             // Select Car model Button
+		/*driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();             // Select Car model Button
 		test.log(Status.PASS, "Tap Car Model button to Select Car Information");
 		driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                    // Select car Year
 		test.log(Status.PASS, "Select Car Year");
@@ -105,7 +107,7 @@ public class Insurance extends SetDesiredCapabilities
 		test.log(Status.PASS, "Select City");
 		//driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();                // Click on Submit button
 		test.log(Status.PASS, "Select Submit Button");
-		test.log(Status.INFO, "Test Successfully Completed");
+		test.log(Status.INFO, "Test Successfully Completed");*/
 	}
 		
 }

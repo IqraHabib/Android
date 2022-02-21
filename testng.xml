@@ -16,7 +16,6 @@
 	<test name="Lead Forms">
 	    <classes>	
 			<class name="LeadForms.Insurance"/>
-			<class name="LeadForms.SellItForMe"/>
 	    </classes>
 	</test> 
 

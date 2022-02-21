@@ -2,6 +2,8 @@ package LeadForms;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
@@ -15,7 +17,7 @@ public class SellItForMe extends SetDesiredCapabilities
 	@Test(priority = 0)
 	public void SellItForMeRequest_WithoutLogin() 
 	{
-		test= extent.createTest("Sell It For Me Request- Without Login");
+		ExtentTest test= extent.createTest("Sell It For Me Request- Without Login");
 		driver.launchApp();
 
 		test.log(Status.INFO, "Test Started");	
@@ -54,7 +56,7 @@ public class SellItForMe extends SetDesiredCapabilities
 	@Test(priority = 1)
 	public void SellItForMeRequest_WithLogin() 
 	{
-		test= extent.createTest("Sell It For Me Request- Login");
+		ExtentTest test= extent.createTest("Sell It For Me Request- Login");
 		driver.launchApp();
 		
 		test.log(Status.INFO, "Test Started");	
