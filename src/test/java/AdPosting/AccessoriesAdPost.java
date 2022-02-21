@@ -2,10 +2,8 @@ package AdPosting;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
 import io.appium.java_client.MobileBy;
