@@ -7,14 +7,14 @@
   </listeners>
   <test thread-count="5" name="Search(failed)">
     <classes>
-      <class name="LeadForms.Insurance">
+      <class name="Search.NewBikeSearch">
         <methods>
-          <include name="InsuranceRequest_WithLogin"/>
-          <include name="InsuranceRequest_WithoutLogin"/>
-          <include name="reportSetup"/>
+          <include name="Scroll"/>
+          <include name="beforeSuiteSetup"/>
+          <include name="afterSuite"/>
           <include name="SetCapabilities"/>
         </methods>
-      </class> <!-- LeadForms.Insurance -->
+      </class> <!-- Search.NewBikeSearch -->
     </classes>
   </test> <!-- Search(failed) -->
 </suite> <!-- Failed suite [Suite] -->

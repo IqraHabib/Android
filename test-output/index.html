@@ -51,12 +51,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\PakWheels\eclipse-workspace\Testingextentreport\testng.xml</span>
+                    <span>C:\Users\user\eclipse-workspace\Android\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,16 +102,6 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="LeadForms.Insurance" class="method navigator-link" hash-for-method="InsuranceRequest_WithLogin">InsuranceRequest_WithLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="LeadForms.Insurance" class="method navigator-link" hash-for-method="InsuranceRequest_WithoutLogin">InsuranceRequest_WithoutLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Search.NewBikeSearch" class="method navigator-link" hash-for-method="Scroll">Scroll</a> <!-- method navigator-link -->
@@ -144,32 +134,10 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">LeadForms.Insurance</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="InsuranceRequest_WithLogin">
-                  </a> <!-- InsuranceRequest_WithLogin -->
-                  <span class="method-name">InsuranceRequest_WithLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="InsuranceRequest_WithoutLogin">
-                  </a> <!-- InsuranceRequest_WithoutLogin -->
-                  <span class="method-name">InsuranceRequest_WithoutLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\PakWheels\eclipse-workspace\Testingextentreport\testng.xml</span>
+            <span class="header-content">C:\Users\user\eclipse-workspace\Android\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -185,11 +153,6 @@
       &lt;class name=&quot;Search.NewBikeSearch&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Search --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Lead Forms&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;LeadForms.Insurance&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Lead Forms --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -202,9 +165,6 @@
             <ul>
               <li>
                 <span class="test-name">Search (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">Lead Forms (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -230,19 +190,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'InsuranceRequest_WithLogin')
-data.setCell(0, 2, 'LeadForms.Insurance')
-data.setCell(0, 3, 55035);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'InsuranceRequest_WithoutLogin')
-data.setCell(1, 2, 'LeadForms.Insurance')
-data.setCell(1, 3, 17393);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'Scroll')
-data.setCell(2, 2, 'Search.NewBikeSearch')
-data.setCell(2, 3, 12007);
+data.setCell(0, 1, 'Scroll')
+data.setCell(0, 2, 'Search.NewBikeSearch')
+data.setCell(0, 3, 62053);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -273,40 +225,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">LeadForms.Insurance</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Search.NewBikeSearch</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforeSuiteSetup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">Search.NewBikeSearch</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">SetCapabilities</span>
-                <span class="method-start">195 ms</span>
+                <span class="method-start">228 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">Scroll</span>
-                <span class="method-start">18325 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">LeadForms.Insurance</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">SetCapabilities</span>
-                <span class="method-start">30365 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="test-method">
-                <span class="method-name">InsuranceRequest_WithoutLogin</span>
-                <span class="method-start">45033 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">InsuranceRequest_WithLogin</span>
-                <span class="method-start">62428 ms</span>
+                <span class="method-start">14660 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">117475 ms</span>
+                <span class="method-start">76755 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

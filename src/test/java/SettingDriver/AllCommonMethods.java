@@ -39,7 +39,7 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	public String SelectImage3= "(//android.widget.ImageView)[4]";	
 	public String ClickPostYourAdButton= "//android.widget.Button[@text= 'Post Your Ad']";
 	
-	public String SelectBikePage= "//android.widget.CompoundButton[@text= 'Bikes']";
+	public String SelectBikePage= "//android.widget.CompounButton[@text= 'Bikes']";
 	
 	public void SetApplicationLanguage()
 	{

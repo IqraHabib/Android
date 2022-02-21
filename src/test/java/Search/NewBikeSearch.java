@@ -24,8 +24,17 @@ public class NewBikeSearch extends SetDesiredCapabilities
 		
 		test.log(Status.INFO, "Logged-In");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		driver.findElement(By.xpath(CommonMethod.SelectBikePage)).click();   
-		test.log(Status.PASS, "Clicked Bike Page");
+		
+		try 
+		{ 
+			driver.findElement(By.xpath(CommonMethod.SelectBikePage)).click();   
+			test.log(Status.PASS, "Clicked Bike Page");
+		}
+		catch(org.openqa.selenium.NoSuchElementException e)
+		{
+			test.log(Status.FAIL, "Clicked Bike Page");
+		}
+		
 		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"New Bikes\").instance(0))"));
 		driver.findElement(By.xpath(SelectNewBikes)).click();  
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

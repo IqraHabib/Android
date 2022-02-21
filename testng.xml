@@ -13,10 +13,4 @@
 	    </classes>
 	</test> 
 
-	<test name="Lead Forms">
-	    <classes>	
-			<class name="LeadForms.Insurance"/>
-	    </classes>
-	</test> 
-
 </suite> 

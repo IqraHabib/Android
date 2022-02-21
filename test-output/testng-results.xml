@@ -1,45 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-21T17:41:37 PKT" name="Suite" finished-at="2022-02-21T17:43:34 PKT" duration-ms="117272">
+  <suite started-at="2022-02-21T21:45:32 PKT" name="Suite" finished-at="2022-02-21T21:46:48 PKT" duration-ms="76495">
     <groups>
     </groups>
-    <test started-at="2022-02-21T17:41:37 PKT" name="Search" finished-at="2022-02-21T17:42:07 PKT" duration-ms="30147">
+    <test started-at="2022-02-21T21:45:32 PKT" name="Search" finished-at="2022-02-21T21:46:48 PKT" duration-ms="76495">
       <class name="Search.NewBikeSearch">
-        <test-method is-config="true" signature="SetCapabilities()[pri:0, instance:Search.NewBikeSearch@4e5ed836]" started-at="2022-02-21T17:41:37 PKT" name="SetCapabilities" finished-at="2022-02-21T17:41:55 PKT" duration-ms="18108" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetCapabilities -->
-        <test-method signature="Scroll()[pri:0, instance:Search.NewBikeSearch@4e5ed836]" started-at="2022-02-21T17:41:55 PKT" name="Scroll" finished-at="2022-02-21T17:42:07 PKT" duration-ms="12007" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Scroll -->
-      </class> <!-- Search.NewBikeSearch -->
-    </test> <!-- Search -->
-    <test started-at="2022-02-21T17:42:07 PKT" name="Lead Forms" finished-at="2022-02-21T17:43:34 PKT" duration-ms="87101">
-      <class name="LeadForms.Insurance">
-        <test-method is-config="true" signature="beforeSuiteSetup()[pri:0, instance:LeadForms.Insurance@3932c79a]" started-at="2022-02-21T17:41:37 PKT" name="beforeSuiteSetup" finished-at="2022-02-21T17:41:37 PKT" duration-ms="193" status="PASS">
+        <test-method is-config="true" signature="beforeSuiteSetup()[pri:0, instance:Search.NewBikeSearch@2a8448fa]" started-at="2022-02-21T21:45:32 PKT" name="beforeSuiteSetup" finished-at="2022-02-21T21:45:32 PKT" duration-ms="225" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuiteSetup -->
-        <test-method is-config="true" signature="SetCapabilities()[pri:0, instance:LeadForms.Insurance@3932c79a]" started-at="2022-02-21T17:42:07 PKT" name="SetCapabilities" finished-at="2022-02-21T17:42:22 PKT" duration-ms="14666" status="PASS">
+        <test-method is-config="true" signature="SetCapabilities()[pri:0, instance:Search.NewBikeSearch@2a8448fa]" started-at="2022-02-21T21:45:32 PKT" name="SetCapabilities" finished-at="2022-02-21T21:45:46 PKT" duration-ms="14364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetCapabilities -->
-        <test-method signature="InsuranceRequest_WithoutLogin()[pri:0, instance:LeadForms.Insurance@3932c79a]" started-at="2022-02-21T17:42:22 PKT" name="InsuranceRequest_WithoutLogin" finished-at="2022-02-21T17:42:39 PKT" duration-ms="17393" status="PASS">
+        <test-method signature="Scroll()[pri:0, instance:Search.NewBikeSearch@2a8448fa]" started-at="2022-02-21T21:45:46 PKT" name="Scroll" finished-at="2022-02-21T21:46:48 PKT" duration-ms="62053" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- InsuranceRequest_WithoutLogin -->
-        <test-method signature="InsuranceRequest_WithLogin()[pri:1, instance:LeadForms.Insurance@3932c79a]" started-at="2022-02-21T17:42:39 PKT" name="InsuranceRequest_WithLogin" finished-at="2022-02-21T17:43:34 PKT" duration-ms="55035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InsuranceRequest_WithLogin -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:LeadForms.Insurance@3932c79a]" started-at="2022-02-21T17:43:34 PKT" name="afterSuite" finished-at="2022-02-21T17:43:35 PKT" duration-ms="305" status="PASS">
+        </test-method> <!-- Scroll -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:Search.NewBikeSearch@2a8448fa]" started-at="2022-02-21T21:46:48 PKT" name="afterSuite" finished-at="2022-02-21T21:46:49 PKT" duration-ms="484" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- LeadForms.Insurance -->
-    </test> <!-- Lead Forms -->
+      </class> <!-- Search.NewBikeSearch -->
+    </test> <!-- Search -->
   </suite> <!-- Suite -->
 </testng-results>
