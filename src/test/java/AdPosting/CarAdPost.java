@@ -33,7 +33,6 @@ public class CarAdPost extends SetDesiredCapabilities
 	public void CarAdPostAfterLogin()
 	{	
 		ExtentTest test= extent.createTest("Car Ad Post");
-		driver.launchApp();
 
 		test.log(Status.INFO, "Test Started");	
 		CommonMethod.SetApplicationLanguage();                                                  // Set Application language

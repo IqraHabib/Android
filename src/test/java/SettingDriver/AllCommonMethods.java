@@ -39,7 +39,9 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	public String SelectImage3= "(//android.widget.ImageView)[4]";	
 	public String ClickPostYourAdButton= "//android.widget.Button[@text= 'Post Your Ad']";
 	
-	public String SelectBikePage= "//android.widget.CompounButton[@text= 'Bikes']";
+	// Bike Search
+	public String SelectBikeTab= "//android.widget.CompoundButton[@text= 'Bikes']";
+	public String ModelNameText= "//android.widget.TextView[@text= 'Honda CD 70']";
 	
 	public void SetApplicationLanguage()
 	{
@@ -52,7 +54,7 @@ public class AllCommonMethods extends SetDesiredCapabilities
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                                    // Wait for screen to update
 		driver.findElement(By.xpath("//android.widget.Button[@text='Continue with Email']")).click();       // Select Email as Login Option
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                                    // Wait for screen to update
-		driver.findElement(By.xpath("//android.widget.EditText[@text='username@email.com']")).sendKeys("testpw120@mailinator.com");  //Enter Email
+		driver.findElement(By.xpath("//android.widget.EditText[@text='username@email.com']")).sendKeys("testpw150@mailinator.com");  //Enter Email
 		driver.findElement(By.xpath("//android.widget.EditText[@text='Enter password']")).sendKeys("1234567");   // Enter Password
 		driver.findElement(By.xpath("//android.widget.Button[@text='Sign in']")).click();                   // Select Sign-in button
 	}
@@ -66,6 +68,6 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	}
 	public void EnterEmail()
 	{
-		driver.findElement(By.xpath("//android.widget.EditText[@text='Email (Optional)']")).sendKeys("testpw1@mailinator.com");   // Enter Email
+		driver.findElement(By.xpath("//android.widget.EditText[@text='Email (Optional)']")).sendKeys("testpw150@mailinator.com");   // Enter Email
 	}
 }

@@ -2,10 +2,8 @@ package LeadForms;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
 import io.appium.java_client.MobileBy;
@@ -13,7 +11,7 @@ import io.appium.java_client.MobileBy;
 public class AuctionSheet extends SetDesiredCapabilities 
 {
 	AllCommonMethods CommonMethod = new AllCommonMethods(); 
-	private String AuctionSheetPage= "(//com.pakwheels.staging:id/marketing_widget_title)[3]";
+	private String AuctionSheetPage= "com.pakwheels.staging:id/marketing_widget_title";
 	private String EnterChasisNumber= "//android.widget.EditText[@text= 'Enter Chassis Number(e.g ZZT240–316982)']";
 	private String ClickGetAuctionSheetButton= "//android.widget.Button[@text= 'Get Auction Sheet']";
 	private String ClickProceedToCheckOut= "//android.widget.Button[@text= 'Proceed to Checkout']";
@@ -32,16 +30,16 @@ public class AuctionSheet extends SetDesiredCapabilities
 		test.log(Status.PASS, "Navigate to menu page by clicking more button");
 		driver.findElement(By.xpath(CommonMethod.SelectUsedCars)).click();                // Click on Used Cars button from more screen
 		test.log(Status.PASS, "Tap on Used Cars to open Drop-Down");	
-		//driver.findElement(By.xpath(AuctionSheetPage)).click();   
+		driver.findElements(By.id(AuctionSheetPage)).get(7).click();   
 		test.log(Status.PASS, "Navigate to Auction Sheet page");
 		driver.findElement(By.xpath(EnterChasisNumber)).sendKeys("RU3-1041850");
 		test.log(Status.PASS, "Enter Chasis Number");
 		driver.findElement(By.xpath(ClickGetAuctionSheetButton)).click();   
 		test.log(Status.PASS, "Click on Get Auction Sheet Button");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Mobile Number\").instance(0))"));   //Scroll	
 		CommonMethod.EnterName();
 		test.log(Status.PASS, "Enter Name");
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Proceed To CheckOut\").instance(0))"));   //Scroll	
 		CommonMethod.EnterMobileNumber();
 		test.log(Status.PASS, "Enter Mobile Number");
 		driver.findElement(By.xpath(ClickProceedToCheckOut)).click();  
@@ -64,18 +62,17 @@ public class AuctionSheet extends SetDesiredCapabilities
 		CommonMethod.Login();	                                                          // Login through an email
 		test.log(Status.PASS, "Login via Email");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  // Wait for screen to update	
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Blog\").instance(0))"));   //Scroll
 		driver.findElement(By.xpath(CommonMethod.SelectUsedCars)).click();                // Click on Used Cars button from more screen
-		test.log(Status.PASS, "Tap on Used Cars to open Drop-Down");
-		//driver.findElement(By.xpath(AuctionSheetPage)).click();   
+		test.log(Status.PASS, "Tap on Used Cars to open Drop-Down");	
+		driver.findElements(By.id(AuctionSheetPage)).get(6).click();    
 		test.log(Status.PASS, "Navigate to Auction Sheet page");
 		driver.findElement(By.xpath(EnterChasisNumber)).sendKeys("RU3-1041850");
 		test.log(Status.PASS, "Enter Chasis Number");
 		driver.findElement(By.xpath(ClickGetAuctionSheetButton)).click();   
 		test.log(Status.PASS, "Click on Get Auction Sheet Button");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Mobile Number\").instance(0))"));   //Scroll	
-		CommonMethod.EnterMobileNumber();
-		test.log(Status.PASS, "Enter Mobile Number");
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Proceed To CheckOut\").instance(0))"));   //Scroll	
 		driver.findElement(By.xpath(ClickProceedToCheckOut)).click();  
 		test.log(Status.PASS, "Click Proceed To CheckOut");
 	}

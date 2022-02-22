@@ -93,8 +93,6 @@ public class InspectionRequest extends SetDesiredCapabilities
 		test.log(Status.PASS, "Select City");
 		driver.findElement(By.xpath(CommonMethod.SelectCityArea)).click();                 // Select City Area
 		test.log(Status.PASS, "Select City Area");
-		CommonMethod.EnterMobileNumber();                                                  // Enter Mobile Number
-		test.log(Status.PASS, "Enter Mobile Number");
 		//driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();            // Click on Submit button
 		test.log(Status.PASS, "Select Submit Button");
 		test.log(Status.INFO, "Test Successfully Completed");

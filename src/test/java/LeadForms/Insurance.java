@@ -98,8 +98,6 @@ public class Insurance extends SetDesiredCapabilities
 		test.log(Status.PASS, "Add Tracker");
 		driver.findElement(By.xpath(CommonMethod.ClickApplyNowButton)).click();              // Select Apply Now button
 		test.log(Status.PASS, "Tap on Apply Now Button");
-		//CommonMethod.EnterMobileNumber();                                                    // Enter Phone Number
-		//test.log(Status.PASS, "Enter Mobile Number");
 		driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();             // Select Location
 		test.log(Status.PASS, "Select Location button");
 		driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                       // Select City

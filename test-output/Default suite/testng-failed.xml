@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestScripts.InspectionRequest">
+      <class name="Search.UsedBikeSearch">
         <methods>
+          <include name="UsedBikeSearch_Honda"/>
+          <include name="beforeSuiteSetup"/>
+          <include name="afterSuite"/>
           <include name="SetCapabilities"/>
-          <include name="InspectionRequest_FromSimpleAdDetailedPage_WithOutLogin"/>
-          <include name="InspectionRequest_FromSimpleAdDetailedPage_WithLogin"/>
-          <include name="setup"/>
-          <include name="InspectionRequest_FromMenu_WithLogin"/>
         </methods>
-      </class> <!-- TestScripts.InspectionRequest -->
+      </class> <!-- Search.UsedBikeSearch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

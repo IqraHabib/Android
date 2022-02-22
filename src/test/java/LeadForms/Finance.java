@@ -172,8 +172,6 @@ public class Finance extends SetDesiredCapabilities
 		test.log(Status.PASS, "Select Calcuate Button");
 		driver.findElement(By.xpath(ClickApplyNowForBank)).click();
 		test.log(Status.PASS, "Tap on Apply Now Button after selecting Bank");
-		CommonMethod.EnterMobileNumber();
-		test.log(Status.PASS, "Enter Mobile Number");
 		driver.findElement(By.xpath(EnterAge)).sendKeys("25");
 		test.log(Status.PASS, "Enter Age");
 		driver.findElement(By.xpath(EnterCNIC)).sendKeys("35202-2106126-9");
@@ -362,8 +360,6 @@ public class Finance extends SetDesiredCapabilities
 		test.log(Status.PASS, "Select Calcuate Button");
 		driver.findElement(By.xpath(ClickApplyNowForBank)).click();
 		test.log(Status.PASS, "Tap on Apply Now Button after selecting Bank");
-		CommonMethod.EnterMobileNumber();
-		test.log(Status.PASS, "Enter Mobile Number");
 		driver.findElement(By.xpath(EnterAge)).sendKeys("25");
 		test.log(Status.PASS, "Enter Age");
 		driver.findElement(By.xpath(EnterCNIC)).sendKeys("35202-2106126-9");

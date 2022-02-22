@@ -7,6 +7,24 @@
 		<listener class-name="Resources.ExtentReporterNG"></listener>
 	</listeners>  
 
+	<test name="AdPosting">
+	    <classes>	
+			<class name="AdPosting.CarAdPost"/>	
+			<class name="AdPosting.BikeAdPost"/>	
+			<class name="AdPosting.AccessoriesAdPost"/>	
+	    </classes>
+	</test>
+
+	<test name="LeadForms">
+	    <classes>	
+			<class name="LeadForms.SellItForMe"/>	
+			<class name="LeadForms.InspectionRequest"/>	
+			<class name="LeadForms.Insurance"/>	
+			<class name="LeadForms.Finance"/>	
+			<class name="LeadForms.AuctionSheet"/>	
+	    </classes>
+	</test>
+
 	<test name="Search">
 	    <classes>	
 			<class name="Search.NewBikeSearch"/>	

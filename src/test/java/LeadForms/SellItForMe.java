@@ -85,8 +85,8 @@ public class SellItForMe extends SetDesiredCapabilities
 		test.log(Status.PASS, "Select Location button");
 		driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                    // Select City
 		test.log(Status.PASS, "Select City");
-		CommonMethod.EnterMobileNumber();                                                 // Enter Mobile Number
-		test.log(Status.PASS, "Enter Mobile Number");
+		//CommonMethod.EnterMobileNumber();                                                 // Enter Mobile Number
+		//test.log(Status.PASS, "Enter Mobile Number");
 		//driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();             // Click on Submit button
 		test.log(Status.PASS, "Select Submit Button");
 		test.log(Status.INFO, "Test Successfully Completed");
