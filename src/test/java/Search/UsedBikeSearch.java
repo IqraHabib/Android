@@ -2,14 +2,11 @@ package Search;
 import static org.testng.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.touch.TouchActions;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
-import io.appium.java_client.MobileBy;
 
 public class UsedBikeSearch extends SetDesiredCapabilities
 {
@@ -52,314 +49,321 @@ public class UsedBikeSearch extends SetDesiredCapabilities
  	public void UsedBikeSearch_Honda()
  	{	
 		ExtentTest test= extent.createTest("Used Bike Search");	
+		driver.launchApp();
 		test.log(Status.INFO, "Test Started");	
+			
+		try{
+			CommonMethod.SetApplicationLanguage();                                                  
+			test.log(Status.PASS, "Verify that user can set application language (Test Data: English)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
+		}
 		
-		//driver.launchApp();
-		CommonMethod.SetApplicationLanguage();
-		test.log(Status.PASS, "Set Application language to English");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  // Wait for screen to update
-		driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();               // Click More Button
-		test.log(Status.PASS, "Navigate to menu page by clicking more button");
-		driver.findElement(By.xpath(CommonMethod.ClickSignInButton)).click();             // Select Sign-in button
-		test.log(Status.PASS, "Tap on Sign-In Button");
-		CommonMethod.Login();	                                                          // Login through an email
-		test.log(Status.PASS, "Login via Email");		
-		try
-		{
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);              
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
+			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can navigate to menu page by clicking more button");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickSignInButton)).click();             
+			test.log(Status.PASS, "Verify that user can tap on Sign-In Button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on Sign-In Button");
+		}
+		
+		try{
+			CommonMethod.Login();                                               
+			test.log(Status.PASS, "Verify that user can login (Test Data: Email)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
+		}
+		
+		try{
 			driver.findElement(By.xpath(CommonMethod.ClickHomeButton)).click(); 
-			test.log(Status.PASS, "Select Home Button to visit Home screen");
+			test.log(Status.PASS, "Verify that user can select Home Button to visit Home screen");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Home Button to visit Home screen");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Home Button to visit Home screen");
-		}
+		
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		try
-		{
+		try{
 			driver.findElement(By.xpath(CommonMethod.SelectBikeTab)).click(); 
-			test.log(Status.PASS, "Select Bike Tab from Headers");
+			test.log(Status.PASS, "Verify that user can select Bike tab from headers");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Bike tab from headers");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Bike Tab from Headers");
-		}
-		/*try  // Select City from Search Bar
-		{ 
+		
+		test.log(Status.INFO, "User is navigated to Bike Page");	
+		
+		try { 
 			driver.findElement(By.xpath(SelectCityFromSearchBar)).click();   
-			test.log(Status.PASS, "Select All-City to update City from Search Bar");
+			test.log(Status.PASS, "Verify that user can select All-City to update City from Search Bar");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select All-City to update City from Search Bar");
+		}
+		
+		try { 
 			driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                 
-			test.log(Status.PASS, "Select City from drop-down");
+			test.log(Status.PASS, "Verify that user can select City from drop-down");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select City from drop-down");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select All-City to update City from Search Bar");
-			test.log(Status.FAIL, "Select City from drop-down");
-		}*/
-		try
-		{
+		
+		try{
 			driver.findElement(By.xpath(SearchBar)).click();   
-			test.log(Status.PASS, "Tap on Search Bar to enter text");
+			test.log(Status.PASS, "Verify that user can tap on Search Bar to enter text");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on Search Bar to enter text");
+		}
+		
+		try{
 			driver.findElement(By.xpath(EnterTextInSearchBar)).sendKeys("Honda CD 70");   
-			test.log(Status.PASS, "Enter Bike Make Model in Search Bar");
+			test.log(Status.PASS, "Verify that user can enter Bike Make Model in Search Bar (Test Data: Honda CD 70)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Bike Make Model in Search Bar (Test Data: Honda CD 70)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Tap on Search Bar to enter text");
-			test.log(Status.FAIL, "Enter Bike Make Model in Search Bar");
-		}
-		try
-		{
+		
+		try{
 			driver.findElement(By.xpath(SelectBike)).click(); 
-			test.log(Status.PASS, "Select Bike Model from search result (Selected: Honda CD 70)");
-		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Bike Model from search result (Selected: Honda CD 70)");
+			test.log(Status.PASS, "Verify that user can select Bike Model from search result (Test Data: Honda CD 70)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Bike Model from search result (Test Data: Honda CD 70)");
 		}
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-		//************************************************** Ad Listing *****************************************************
+		test.log(Status.INFO, "User is navigated to Bike Ad Listing Screen");
 		
-		/*try  // Apply Sort
-		{
+		try{
 			driver.findElement(By.xpath(SelectSort)).click(); 
-			test.log(Status.PASS, "Select Sort Button");
+			test.log(Status.PASS, "Verify that user can select Sort Button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Sort Button");
+		}
+		
+		try{
 			driver.findElement(By.xpath(ApplySortasPriceHighToLow)).click(); 
-			test.log(Status.PASS, "Sort listing on the basis of Price High to Low");
+			test.log(Status.PASS, "Verify that user can choose from sort options (Test Data: Price High to Low)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can choose from sort options (Test Data: Price High to Low)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Sort Button");
-			test.log(Status.FAIL, "Sort listing on the basis of Price High to Low");
-		}
-		try   // Save Ad
-		{
+			
+		try {
 			driver.findElements(By.id(SaveAd)).get(0).click(); 
-			test.log(Status.PASS, "Save 1st Ad");
+			test.log(Status.PASS, "Verify that user can save Ad (Test Data: 1st Ad)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can save Ad (Test Data: 1st Ad)");
+		}
+		
+		try {
 			driver.findElements(By.id(SaveAd)).get(1).click(); 
-			test.log(Status.PASS, "Save 2nd Ad");
+			test.log(Status.PASS, "Verify that user can save Ad (Test Data: 2nd Ad)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can save Ad (Test Data: 2nd Ad)");
+		}
+		
+		try {
 			driver.findElements(By.id(SaveAd)).get(2).click(); 
-			test.log(Status.PASS, "Save 3rd Ad");
+			test.log(Status.PASS, "Verify that user can save Ad (Test Data: 3rd Ad)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can save Ad (Test Data: 3rd Ad)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Save 1st Ad");
-			test.log(Status.FAIL, "Save 2nd Ad");
-			test.log(Status.FAIL, "Save 3rd Ad");
-		}
-		try   // Alert Creation
-		{
+		
+		try{
 			driver.findElement(By.id(NotifyMe)).click(); 
-			test.log(Status.PASS, "Tap on Alert Button from headers");
+			test.log(Status.PASS, "Verify that user can tap on Alert Button from headers to create alert");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on Alert Button from headers to create alert");
+		}
+		
+		try{
 			driver.findElement(By.xpath(SelectCreateAlert)).click(); 
-			test.log(Status.PASS, "Create Alert");
-		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Tap on Alert Button from headers");
-			test.log(Status.FAIL, "Create Alert");
+			test.log(Status.PASS, "Verify that user can create Alert (Test Data: Daily)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can create Alert (Test Data: Daily)");
 		}
 		
-		try
-		{
+		try{
 			driver.findElement(By.xpath(SelectFilters)).click(); 
-			test.log(Status.PASS, "Select Filters from Bike Listing Page");
-		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Filters from Bike Listing Page");
+			test.log(Status.PASS, "Verify that user can select Filter button from Bike Listing Page");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Filter button from Bike Listing Page");
 		}
 		
-		//************************************************** Advance Search ****************************************************
-		try
-		{
+		test.log(Status.INFO, "User is navigated to Advance Search Filters Screen");
+		
+		try{
 			driver.findElement(By.xpath(EnterKeywords)).sendKeys("Honda CD 70"); 
-			test.log(Status.PASS, "Enter Keyword");
+			test.log(Status.PASS, "Verify that user can enter Keyword (Test Data: Honda CD 70)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Keyword (Test Data: Honda CD 70)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Enter Keyword");
-		}
-		try
-		{
+		
+		try{
 			driver.findElement(By.xpath(EnterMinPrice)).sendKeys("80000");   
-			test.log(Status.PASS, "Enter Min Price");
+			test.log(Status.PASS, "Verify that user can enter Min Price (Test Data: 80 Thousand)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Min Price (Test Data: 80 Thousand)");
+		}
+		
+		try{
 			driver.findElement(By.xpath(EnterMaxPrice)).sendKeys("10000000");   
-			test.log(Status.PASS, "Enter Max Price");
+			test.log(Status.PASS, "Verify that user can enter Max Price (Test Data: 1 Crore)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Max Price (Test Data: 1 Crore)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Enter Min Price");
-			test.log(Status.FAIL, "Enter Max Price");
-		}
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Model Year Range\").instance(0))"));   //Scroll	
-		try
-		{
+		
+		CommonMethod.Scroll("Model Year Range");
+		try{
 			driver.findElement(By.xpath(EnterMinYear)).sendKeys("2012");   
-			test.log(Status.PASS, "Enter Min Year");
+			test.log(Status.PASS, "Verify that user can enter Min Yea (Test Data: 2012)r");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Min Year (Test Data: 2012)");
+		}
+		
+		try{
 			driver.findElement(By.xpath(EnterMaxYear)).sendKeys("2023");   
-			test.log(Status.PASS, "Enter Max Year");
+			test.log(Status.PASS, "Verify that user can enter Max Year (Test Data: 2023)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Max Year (Test Data: 2023)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Enter Min Year");
-			test.log(Status.FAIL, "Enter Max Year");
-		}
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Mileage (KM)\").instance(0))"));   //Scroll	
-		try
-		{
+		
+		CommonMethod.Scroll("Mileage (KM)");
+		try{
 			driver.findElement(By.xpath(EnterMinMileage)).sendKeys("1000");   
-			test.log(Status.PASS, "Enter Min Mileage");
-			driver.findElement(By.xpath(EnterMaxMileage)).sendKeys("100000");   
-			test.log(Status.PASS, "Enter Max Mileage");
-		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Enter Min Mileage");
-			test.log(Status.FAIL, "Enter Max Mileage");
+			test.log(Status.PASS, "Verify that user can enter Min Mileage (Test Data: 1000)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Min Mileage (Test Data: 1000)");
 		}	
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Engine Type\").instance(0))"));   //Scroll	
-		try 
-		{
+		
+		try{
+			driver.findElement(By.xpath(EnterMaxMileage)).sendKeys("100000");   
+			test.log(Status.PASS, "Verify that user can enter Max Mileage (Test Data: 1 Lac)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter Max Mileage (Test Data: 1 Lac)");
+		}
+		
+		CommonMethod.Scroll("Engine Type");
+		try {
 			driver.findElement(By.xpath(Select2Stroke)).click(); 
 			driver.findElement(By.xpath(Select4Stroke)).click(); 
-			test.log(Status.PASS, "Select Engine Type");
-		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Engine Type");
-		}		
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Body Type\").instance(0))"));   //Scroll	
-		try 
-		{
+			test.log(Status.PASS, "Verify that user can select Engine Type (Test Data: 2-Stroke + 4-Stroke)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Engine Type (Test Data: 2-Stroke + 4-Stroke)");
+		}	
+		
+		CommonMethod.Scroll("Body Type");
+		try {
 			driver.findElement(By.xpath(SelectStandardBodyType)).click(); 
-			test.log(Status.PASS, "Select Standard Body Type");
+			test.log(Status.PASS, "Verify that user can select Standard Body Type (Test Data: Standard)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Standard Body Type (Test Data: Standard)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Standard Body Type");
-		}
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Seller Type\").instance(0))"));   //Scroll	
-		try 
-		{
+		
+		CommonMethod.Scroll("Seller Type");
+		try {
 			driver.findElement(By.xpath(SelectIndividualsSeller)).click(); 
 			driver.findElement(By.xpath(SelectDealersSeller)).click(); 
-			test.log(Status.PASS, "Select Seller Type");
+			test.log(Status.PASS, "Verify that user can select Seller Type (Test Data: Individual + Dealer)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Seller Type (Test Data: Individual + Dealer)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Seller Type");
-		}
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Ad Properties\").instance(0))"));   //Scroll	
-		try 
-		{
+		
+		CommonMethod.Scroll("Ad Properties");
+		try {
 			driver.findElement(By.xpath(SelectAdProperties)).click(); 
-			test.log(Status.PASS, "Select Ad Properties");
+			test.log(Status.PASS, "Verify that user can select Ad Properties (Test Data: Pictures Ad Only)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Ad Properties (Test Data: Pictures Ad Only)");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Ad Properties");
-		}
-		try 
-		{
+		
+		try {
 			driver.findElement(By.xpath(SelectApplyFilters)).click(); 
-			test.log(Status.PASS, "Select Apply Filters Buttons");
-		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Apply Filters Buttons");
-		}	*/
-			
-		// ********************************************* Ad Detail Page ***********************************************
-		try  // Navigate to Ad Detail Page
-		{
+			test.log(Status.PASS, "Verify that user can select Apply Filters button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Apply Filters button");
+		}	
+		
+		try  {
 			driver.findElement(By.id(CommonMethod.SelectAd)).click(); 
-			test.log(Status.PASS, "Select Ad from Bike Listing Page");
+			test.log(Status.PASS, "Verify that user can select Ad from Bike Listing Page");
 		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Select Ad from Bike Listing Page");
+		catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select Ad from Bike Listing Page");
 		}
+		
+		test.log(Status.INFO, "User is navigated to Ad Detailed Page");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		/*try  // Check Model Name
-		{
+		
+		try{
 			String text= driver.findElement(By.xpath(CommonMethod.ModelNameText)).getText(); 
 			assertEquals(text, "Honda CD 70");	
-			test.log(Status.PASS, "Check Model Name");
-		}
-		catch(AssertionError e)
-	    {
-			test.log(Status.FAIL, "Check Model Name");
+			test.log(Status.PASS, "Verify Model Name on Ad detailed Page");
+		}catch(AssertionError e){
+			test.log(Status.FAIL, "Verify Model Name on Ad detailed Page");
 	    }
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Seller Comments\").instance(0))"));   //Scroll	        
-		try  // Check Seller Comments
-		{
+		
+		CommonMethod.Scroll("Seller Comments");
+		try{
 			String text= driver.findElement(By.xpath(SellerCommentsText)).getText();  
 			assertEquals(text, "Seller Comments");
-			test.log(Status.PASS, "Check Seller Comments section is displayed");
-	    }
-		catch(AssertionError e)
-	    {
-			test.log(Status.FAIL, "Check Seller Comments section is displayed");
-        }		
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Features\").instance(0))"));   //Scroll	
-		try  // Check Features Section
-		{
+			test.log(Status.PASS, "Verify Seller Comments section is displayed");
+	    }catch(AssertionError e){
+			test.log(Status.FAIL, "Verify Seller Comments section is displayed");
+        }
+		
+		CommonMethod.Scroll("Features");
+		try{
 			String text= driver.findElement(By.xpath(FeaturesText)).getText();          
 			assertEquals(text, "Features");
-			test.log(Status.PASS, "Check Features section is displayed");
+			test.log(Status.PASS, "Verify Features section is displayed");
+		}catch(AssertionError e){
+			test.log(Status.FAIL, "Verify Features section is displayed");
 		}
-		catch(AssertionError e)
-		{
-			test.log(Status.FAIL, "Check Features section is displayed");
-		}
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Seller Detail\").instance(0))"));   //Scroll			
-	/*	try  // Check Seller Details Section
-		{
+		
+		CommonMethod.Scroll("Seller Detail");
+		try{
 			String text= driver.findElement(By.xpath(SellerDetailText)).getText();          
 			assertEquals(text, "Seller Detail");
-			test.log(Status.PASS, "Check Seller Detail section is displayed");
+			test.log(Status.PASS, "Verify Seller Detail section is displayed");
+		}catch(AssertionError e){
+			test.log(Status.FAIL, "Verify Seller Detail section is displayed");
 		}
-		catch(AssertionError e)
-		{
-			test.log(Status.FAIL, "Check Seller Detail section is displayed");
-		}	
-		try   // Check Seller Details Page
-		{ 
+		
+		try{ 
 			driver.findElement(By.id(VisitSellerDetailsPage)).click(); 
-			test.log(Status.PASS, "Visit Seller Detail Page");
-			driver.findElement(By.xpath(SelectBackButton)).click(); 
-			test.log(Status.PASS, "Back from visiting Seller Details");
-		}
-		catch(org.openqa.selenium.NoSuchElementException e)
-		{
-			test.log(Status.FAIL, "Check Seller Detail section is displayed");
-			test.log(Status.FAIL, "Visit Seller Detail Page");
-			test.log(Status.FAIL, "Back from visiting Seller Details");
+			test.log(Status.PASS, "Verify that user can visit Seller Detail Page");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can visit Seller Detail Page");
 		}	
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Sell Your Bike\").instance(0))"));   //Scroll	
-		try  // Check Sell Your Bike Section
-		{
+		
+		try{ 
+			driver.findElement(By.xpath(SelectBackButton)).click(); 
+			test.log(Status.PASS, "Verify that user can get back from visiting Seller Details page");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "BVerify that user can get back from visiting Seller Details page");
+		}
+		
+		CommonMethod.Scroll("Sell Your Bike");
+		try{
 			String text= driver.findElement(By.xpath(WantToSellBikeText)).getText();          
 			assertEquals(text, "Want to Sell Your Bike?");
-			test.log(Status.PASS, "Check Want to Sell Your Bike section is displayed");
+			test.log(Status.PASS, "Verify Want to Sell Your Bike section is displayed");
+		}catch(AssertionError e){
+			test.log(Status.FAIL, "Verify Want to Sell Your Bike section is displayed");
 		}
-		catch(AssertionError e)
-		{
-			test.log(Status.FAIL, "Check Want to Sell Your Bike section is displayed");
-		}*/
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Post an Ad for Free\").instance(0))"));   //Scroll	        
 		
-		try   // Check Similar Section
-		{
+		CommonMethod.Scroll("Post an Ad for Free");
+		try{
 			String text= driver.findElement(By.xpath(CommonMethod.SimilarAdsText)).getText();          
 			assertEquals(text, "Similar Ads");
-			test.log(Status.PASS, "Check Similar Ads section is displayed");
-		}
-		catch(AssertionError e)
-		{
-			test.log(Status.FAIL, "Check Similar Ads section is displayed");
+			test.log(Status.PASS, "Verify Similar Ads section is displayed");
+		}catch(AssertionError e){
+			test.log(Status.FAIL, "Verify Similar Ads section is displayed");
 		}	
-		test.log(Status.INFO, "Test Successfully Completed");
+		
+		test.log(Status.INFO, "Test Completed");
  	}
 }
