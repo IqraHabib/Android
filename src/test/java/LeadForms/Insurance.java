@@ -6,7 +6,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
-import io.appium.java_client.MobileBy;
 
 public class Insurance extends SetDesiredCapabilities
 {
@@ -20,44 +19,124 @@ public class Insurance extends SetDesiredCapabilities
 	public void InsuranceRequest_WithoutLogin()
 	{
 		ExtentTest test= extent.createTest("Insurance Request- Without Login");
-		driver.launchApp();
-		
+		driver.launchApp();	
 		test.log(Status.INFO, "Test Started");	
-		CommonMethod.SetApplicationLanguage();		                                         // Set Applications Language
-		test.log(Status.PASS, "Set Application language to English");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     // Wait for screen to update
-		driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();                  // Click More Button
-		test.log(Status.PASS, "Navigate to menu page by clicking more button");
-		driver.findElement(By.xpath(CarInsurancePage)).click();                              // Navigate to Insurance Page
-		test.log(Status.PASS, "Navigate to Car Insurance Page");
-		driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();             // Select Car model Button
-		test.log(Status.PASS, "Tap Car Model button to Select Car Information");
-		driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                    // Select car Year
-		test.log(Status.PASS, "Select Car Year");
-		driver.findElement(By.xpath(CommonMethod.SelectCarMakeModel)).click();               // Select Car Make and Model
-		test.log(Status.PASS, "Select Car Make and Model");
-		driver.findElement(By.xpath(CommonMethod.SelectCarVersion)).click();                 // Select Car Version
-		test.log(Status.PASS, "Select Car Version");
-		driver.findElement(By.xpath(CommonMethod.EnterPrice)).sendKeys("1500000");           // Enter Car Price
-		test.log(Status.PASS, "Enter Price");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     // Wait for screen to update
-		driver.findElement(By.xpath(SelectShowPlans)).click();                               // Select Show Plans button
-		test.log(Status.PASS, "Tap on Show Plans");
-		driver.findElement(By.id(SelectTracker)).click();                                    // Add a tracker
-		test.log(Status.PASS, "Add Tracker");
-		driver.findElement(By.xpath(CommonMethod.ClickApplyNowButton)).click();              // Select Apply Now button
-		test.log(Status.PASS, "Tap on Apply Now Button");
-		CommonMethod.EnterName();                                                            // Enter Name
-		test.log(Status.PASS, "Enter Name");
-		CommonMethod.EnterMobileNumber();                                                    // Enter Phone Number
-		test.log(Status.PASS, "Enter Mobile Number");
-		driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();             // Select Location
-		test.log(Status.PASS, "Select Location button");
-		driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                       // Select City
-		test.log(Status.PASS, "Select City");
-		//driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();                // Click on Submit button
-		test.log(Status.PASS, "Select Submit Button");
-		test.log(Status.INFO, "Test Successfully Completed");
+		
+		try{
+			CommonMethod.SetApplicationLanguage();                                                  
+			test.log(Status.PASS, "Verify that user can set application language (Test Data: English)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
+		}
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
+			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can navigate to menu page by clicking more button");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CarInsurancePage)).click();                          
+			test.log(Status.PASS, "Verify that user can navigate to Car Insurance page by cliking on Insurance button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can navigate to Car Insurance page by cliking on Insurance button");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
+			test.log(Status.PASS, "Verify that user can select car model button to open model listing");		
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car model button to open model listing");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                   
+			test.log(Status.PASS, "Verify that user can select car year (Test Data: 2021)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car year (Test Data: 2021)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarMakeModel)).click();              
+			test.log(Status.PASS, "Verify that user can select car make and model (Test Data: Alto)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car make and model (Test Data: Alto)");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarVersion)).click();               
+			test.log(Status.PASS, "Verify that user can select car version (Test Data: VX)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car version (Test Data: VX)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.EnterPrice)).sendKeys("1500000");            
+			test.log(Status.PASS, "Verify that user can enter price (Test Data: 1500000)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter price (Test Data: 1500000)");	
+		}
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     
+		try {
+			driver.findElement(By.xpath(SelectShowPlans)).click();                   
+			test.log(Status.PASS, "Verify that user can tap on show plans button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on show plans button");
+		}
+		
+		try {
+			driver.findElement(By.id(SelectTracker)).click();                                   
+			test.log(Status.PASS, "Verify that user can add tracker");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can add tracker");
+		}
+
+		try {
+			driver.findElement(By.xpath(CommonMethod.ClickApplyNowButton)).click();          
+			test.log(Status.PASS, "Verify that user can tap on Apply Now button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on Apply Now button");
+		}
+
+		try{
+			CommonMethod.EnterName();                                                     
+			test.log(Status.PASS, "Verify that user can enter name");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter name");
+		}
+		
+		try{
+			CommonMethod.EnterMobileNumber();                                             
+			test.log(Status.PASS, "Verify that user can enter mobile number");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter mobile number");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
+			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select location button to open cities listing");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                       
+			test.log(Status.PASS, "Verify that user can select city (Test Data: Lahore)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select city (Test Data: Lahore)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();           
+			test.log(Status.PASS, "Verify that user can select submit button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select submit button");	
+		}
+		
+		test.log(Status.INFO, "Test Completed");
 	}	
 	
 	
@@ -65,46 +144,126 @@ public class Insurance extends SetDesiredCapabilities
 	public void InsuranceRequest_WithLogin()
 	{
 		ExtentTest test= extent.createTest("Insurance Request- Login");
-		driver.launchApp();
-		
+		driver.launchApp();		
 		test.log(Status.INFO, "Test Started");	
-		CommonMethod.SetApplicationLanguage();		                                         // Set Applications Language
-		test.log(Status.PASS, "Set Application language to English");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     // Wait for screen to update
-		driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();                  // Click More Button
-		test.log(Status.PASS, "Navigate to menu page by clicking more button");
-		driver.findElement(By.xpath(CommonMethod.ClickSignInButton)).click();                // Select Sign-in button
-		test.log(Status.PASS, "Tap on Sign-In Button");
-		CommonMethod.Login();                                                                // Login from an Email account	
-		test.log(Status.PASS, "Login via Email");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     // Wait for screen to update		
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Car Insurance\").instance(0))"));   //Scroll	
-		driver.findElement(By.xpath(CarInsurancePage)).click();                              // Navigate to Insurance Page
-		test.log(Status.PASS, "Navigate to Car Insurance Page");
-		driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();             // Select Car model Button
-		test.log(Status.PASS, "Tap Car Model button to Select Car Information");
-		driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                    // Select car Year
-		test.log(Status.PASS, "Select Car Year");
-		driver.findElement(By.xpath(CommonMethod.SelectCarMakeModel)).click();               // Select Car Make and Model
-		test.log(Status.PASS, "Select Car Make and Model");
-		driver.findElement(By.xpath(CommonMethod.SelectCarVersion)).click();                 // Select Car Version
-		test.log(Status.PASS, "Select Car Version");
-		driver.findElement(By.xpath(CommonMethod.EnterPrice)).sendKeys("1500000");           // Enter Car Price
-		test.log(Status.PASS, "Enter Price");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     // Wait for screen to update
-		driver.findElement(By.xpath(SelectShowPlans)).click();                               // Select Show Plans button
-		test.log(Status.PASS, "Tap on Show Plans");
-		driver.findElement(By.id(SelectTracker)).click();                                    // Add a tracker
-		test.log(Status.PASS, "Add Tracker");
-		driver.findElement(By.xpath(CommonMethod.ClickApplyNowButton)).click();              // Select Apply Now button
-		test.log(Status.PASS, "Tap on Apply Now Button");
-		driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();             // Select Location
-		test.log(Status.PASS, "Select Location button");
-		driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                       // Select City
-		test.log(Status.PASS, "Select City");
-		//driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();                // Click on Submit button
-		test.log(Status.PASS, "Select Submit Button");
-		test.log(Status.INFO, "Test Successfully Completed");
+		
+		try{
+			CommonMethod.SetApplicationLanguage();                                                  
+			test.log(Status.PASS, "Verify that user can set application language (Test Data: English)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
+		}
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
+			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can navigate to menu page by clicking more button");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickSignInButton)).click();             
+			test.log(Status.PASS, "Verify that user can tap on Sign-In Button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on Sign-In Button");
+		}
+		
+		try{
+			CommonMethod.Login();                                               
+			test.log(Status.PASS, "Verify that user can login (Test Data: Email)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
+		}
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     		
+		CommonMethod.Scroll("Car Insurance");
+		try{
+			driver.findElement(By.xpath(CarInsurancePage)).click();                          
+			test.log(Status.PASS, "Verify that user can navigate to Car Insurance page by cliking on Insurance button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can navigate to Car Insurance page by cliking on Insurance button");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
+			test.log(Status.PASS, "Verify that user can select car model button to open model listing");		
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car model button to open model listing");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                   
+			test.log(Status.PASS, "Verify that user can select car year (Test Data: 2021)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car year (Test Data: 2021)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarMakeModel)).click();              
+			test.log(Status.PASS, "Verify that user can select car make and model (Test Data: Alto)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car make and model (Test Data: Alto)");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarVersion)).click();               
+			test.log(Status.PASS, "Verify that user can select car version (Test Data: VX)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car version (Test Data: VX)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.EnterPrice)).sendKeys("1500000");            
+			test.log(Status.PASS, "Verify that user can enter price (Test Data: 1500000)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter price (Test Data: 1500000)");	
+		}
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                     
+		try {
+			driver.findElement(By.xpath(SelectShowPlans)).click();                   
+			test.log(Status.PASS, "Verify that user can tap on show plans button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on show plans button");
+		}
+		
+		try {
+			driver.findElement(By.id(SelectTracker)).click();                                   
+			test.log(Status.PASS, "Verify that user can add tracker");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can add tracker");
+		}
+
+		try {
+			driver.findElement(By.xpath(CommonMethod.ClickApplyNowButton)).click();          
+			test.log(Status.PASS, "Verify that user can tap on Apply Now button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on Apply Now button");
+		}
+
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
+			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select location button to open cities listing");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                       
+			test.log(Status.PASS, "Verify that user can select city (Test Data: Lahore)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select city (Test Data: Lahore)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();           
+			test.log(Status.PASS, "Verify that user can select submit button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select submit button");	
+		}
+
+		test.log(Status.INFO, "Test Completed");
 	}
 		
 }
