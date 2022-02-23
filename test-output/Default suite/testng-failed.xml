@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Search.UsedBikeSearch">
+      <class name="AdPosting.CarAdPost">
         <methods>
-          <include name="UsedBikeSearch_Honda"/>
           <include name="beforeSuiteSetup"/>
           <include name="afterSuite"/>
+          <include name="CarAdPostAfterLogin"/>
           <include name="SetCapabilities"/>
         </methods>
-      </class> <!-- Search.UsedBikeSearch -->
+      </class> <!-- AdPosting.CarAdPost -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

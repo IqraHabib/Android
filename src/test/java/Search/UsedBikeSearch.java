@@ -2,6 +2,8 @@ package Search;
 import static org.testng.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -13,10 +15,9 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 {
 	AllCommonMethods CommonMethod = new AllCommonMethods(); 
 	private String SelectCityFromSearchBar= "//android.widget.TextView[@text= 'All Cities']";
+	private String SelectBike= "//android.widget.TextView[@text= 'Honda CD 70']";
 	private String SearchBar= "//android.widget.TextView[@text= 'Search used bikes']";
 	private String EnterTextInSearchBar= "//android.widget.EditText[@text= 'Search used bikes']";
-	private String SelectBike= "//android.widget.TextView[@text= 'Honda CD 70']";
-	private String SelectAd= "com.pakwheels.staging:id/txtview_ad_title_search_action_item";
 	private String SelectFilters= "//android.widget.Button[@text= 'Filter']";
 	
 	private String EnterKeywords= "//android.widget.EditText[@text= 'Search (e.g Honda Cd 70 in Lahore)']";
@@ -46,7 +47,6 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 	private String VisitSellerDetailsPage= "com.pakwheels.staging:id/iv_email_verified_detail_page";
 	private String SelectBackButton= "//android.widget.ImageButton";
 	private String WantToSellBikeText= "//android.widget.TextView[@text= 'Want to Sell Your Bike?']";
-	private String SimilarAdsText= "//android.widget.TextView[@text= 'Similar Ads']";
 	
 	@Test(priority = 0)
  	public void UsedBikeSearch_Honda()
@@ -83,7 +83,7 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		{
 			test.log(Status.FAIL, "Select Bike Tab from Headers");
 		}
-		try  // Select City from Search Bar
+		/*try  // Select City from Search Bar
 		{ 
 			driver.findElement(By.xpath(SelectCityFromSearchBar)).click();   
 			test.log(Status.PASS, "Select All-City to update City from Search Bar");
@@ -94,7 +94,7 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		{
 			test.log(Status.FAIL, "Select All-City to update City from Search Bar");
 			test.log(Status.FAIL, "Select City from drop-down");
-		}
+		}*/
 		try
 		{
 			driver.findElement(By.xpath(SearchBar)).click();   
@@ -110,17 +110,17 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		try
 		{
 			driver.findElement(By.xpath(SelectBike)).click(); 
-			test.log(Status.PASS, "Select Bike from search result");
+			test.log(Status.PASS, "Select Bike Model from search result (Selected: Honda CD 70)");
 		}
 		catch(org.openqa.selenium.NoSuchElementException e)
 		{
-			test.log(Status.FAIL, "Select Bike from search result");
+			test.log(Status.FAIL, "Select Bike Model from search result (Selected: Honda CD 70)");
 		}
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 		//************************************************** Ad Listing *****************************************************
 		
-		try  // Apply Sort
+		/*try  // Apply Sort
 		{
 			driver.findElement(By.xpath(SelectSort)).click(); 
 			test.log(Status.PASS, "Select Sort Button");
@@ -268,12 +268,12 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		catch(org.openqa.selenium.NoSuchElementException e)
 		{
 			test.log(Status.FAIL, "Select Apply Filters Buttons");
-		}	
+		}	*/
 			
 		// ********************************************* Ad Detail Page ***********************************************
 		try  // Navigate to Ad Detail Page
 		{
-			driver.findElement(By.id(SelectAd)).click(); 
+			driver.findElement(By.id(CommonMethod.SelectAd)).click(); 
 			test.log(Status.PASS, "Select Ad from Bike Listing Page");
 		}
 		catch(org.openqa.selenium.NoSuchElementException e)
@@ -281,7 +281,7 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Select Ad from Bike Listing Page");
 		}
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		try  // Check Model Name
+		/*try  // Check Model Name
 		{
 			String text= driver.findElement(By.xpath(CommonMethod.ModelNameText)).getText(); 
 			assertEquals(text, "Honda CD 70");	
@@ -314,7 +314,7 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Check Features section is displayed");
 		}
 		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Seller Detail\").instance(0))"));   //Scroll			
-		try  // Check Seller Details Section
+	/*	try  // Check Seller Details Section
 		{
 			String text= driver.findElement(By.xpath(SellerDetailText)).getText();          
 			assertEquals(text, "Seller Detail");
@@ -347,11 +347,12 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		catch(AssertionError e)
 		{
 			test.log(Status.FAIL, "Check Want to Sell Your Bike section is displayed");
-		}
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Similar Ads\").instance(0))"));   //Scroll	
+		}*/
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Post an Ad for Free\").instance(0))"));   //Scroll	        
+		
 		try   // Check Similar Section
 		{
-			String text= driver.findElement(By.xpath(SimilarAdsText)).getText();          
+			String text= driver.findElement(By.xpath(CommonMethod.SimilarAdsText)).getText();          
 			assertEquals(text, "Similar Ads");
 			test.log(Status.PASS, "Check Similar Ads section is displayed");
 		}

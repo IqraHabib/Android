@@ -2,6 +2,8 @@ package SettingDriver;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 
+import io.appium.java_client.MobileBy;
+
 public class AllCommonMethods extends SetDesiredCapabilities
 {
 	public String ClickHomeButton= "//android.widget.TextView[@text='Home']";
@@ -42,6 +44,8 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	// Bike Search
 	public String SelectBikeTab= "//android.widget.CompoundButton[@text= 'Bikes']";
 	public String ModelNameText= "//android.widget.TextView[@text= 'Honda CD 70']";
+	public String SelectAd= "com.pakwheels.staging:id/txtview_ad_title_search_action_item";
+	public String SimilarAdsText= "//android.widget.TextView[@text= 'Similar Ads']";
 	
 	public void SetApplicationLanguage()
 	{
@@ -54,7 +58,7 @@ public class AllCommonMethods extends SetDesiredCapabilities
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                                    // Wait for screen to update
 		driver.findElement(By.xpath("//android.widget.Button[@text='Continue with Email']")).click();       // Select Email as Login Option
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                                    // Wait for screen to update
-		driver.findElement(By.xpath("//android.widget.EditText[@text='username@email.com']")).sendKeys("testpw150@mailinator.com");  //Enter Email
+		driver.findElement(By.xpath("//android.widget.EditText[@text='username@email.com']")).sendKeys("testpw152@mailinator.com");  //Enter Email
 		driver.findElement(By.xpath("//android.widget.EditText[@text='Enter password']")).sendKeys("1234567");   // Enter Password
 		driver.findElement(By.xpath("//android.widget.Button[@text='Sign in']")).click();                   // Select Sign-in button
 	}
@@ -69,5 +73,9 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	public void EnterEmail()
 	{
 		driver.findElement(By.xpath("//android.widget.EditText[@text='Email (Optional)']")).sendKeys("testpw150@mailinator.com");   // Enter Email
+	}
+	public void Scroll (String text)
+	{
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+text+"\").instance(0))"));
 	}
 }

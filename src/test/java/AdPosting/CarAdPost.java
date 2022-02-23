@@ -6,7 +6,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
-import io.appium.java_client.MobileBy;
 
 public class CarAdPost extends SetDesiredCapabilities
 {
@@ -33,102 +32,322 @@ public class CarAdPost extends SetDesiredCapabilities
 	public void CarAdPostAfterLogin()
 	{	
 		ExtentTest test= extent.createTest("Car Ad Post");
-
 		test.log(Status.INFO, "Test Started");	
-		CommonMethod.SetApplicationLanguage();                                                  // Set Application language
-		test.log(Status.PASS, "Set Application language to English");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        // Wait for screen to update
-		driver.findElement(By.id(CommonMethod.ClickSellButton)).click();                        // Click Sell button
-		test.log(Status.PASS, "Tap on Sell Button to select Ad type");
-		driver.findElement(By.xpath(CarButton)).click();                                        // Select Car to post Car Ad
-		test.log(Status.PASS, "Select Car Ad");
-		CommonMethod.Login();                                                                   // Login via Email
-		test.log(Status.PASS, "Login via Email");
-		driver.findElement(By.xpath(PostAdByOwn)).click();                                      // Select Post your own Ad
-		test.log(Status.PASS, "Select Post By Own Option");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        // Wait for screen to update	
-		driver.findElement(By.xpath(CommonMethod.SelectAddPhotos)).click();                     // Select Add photos button
-		test.log(Status.PASS, "Select Add Photos");
-		driver.findElement(By.xpath(CommonMethod.SelectUploadPhotoFromGallery)).click();        // Select Upload photos from gallery 
-		test.log(Status.PASS, "Select Upload Photos from gallery");
-		//driver.findElement(By.xpath(CommonMethod.SelectAllowButton)).click();                   // Allow Application to access gallery	
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        // Wait for screen to update  
-		driver.findElement(By.id(CommonMethod.SelectImage1)).click();                           // Select Image
-		test.log(Status.PASS, "Select 1st Image from gallery");
-		driver.findElement(By.xpath(CommonMethod.SelectImage2)).click();                        // Select Image
-		test.log(Status.PASS, "Select 2nd Image from gallery");
-		driver.findElement(By.xpath(CommonMethod.SelectImage3)).click();                        // Select Image 
-		test.log(Status.PASS, "Select 3rd Image from gallery");
-		driver.findElement(By.id(CommonMethod.EndPicturesSelection)).click();                   // Click done button to end selection	
-		test.log(Status.PASS, "End Picture selection by tapping on Tick Button");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        // Wait for screen to update
-		driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                // Select Location
-		test.log(Status.PASS, "Select Location button to Open Listing");
-		driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                          // Select City
-		test.log(Status.PASS, "Select City");
-		driver.findElement(By.xpath(CommonMethod.SelectCityArea)).click();                      // Select City Area
-		test.log(Status.PASS, "Select City Area");
-		driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();                // Select Car Model button  
-		test.log(Status.PASS, "Select Car Model Button to open Listing");
-		driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                       // Select Car year
-		test.log(Status.PASS, "Select Car Year");
-		driver.findElement(By.xpath(CommonMethod.SelectCarMakeModel)).click();                  // Select Car make and model
-		test.log(Status.PASS, "Select Car Make and Model");
-		driver.findElement(By.xpath(CommonMethod.SelectCarVersion)).click();                    // Select Car version
-		test.log(Status.PASS, "Select Car Version");
-		driver.findElement(By.xpath(CommonMethod.SelectRegisteredInButton)).click();            // Select Car registration year
-		test.log(Status.PASS, "Select Registered-In Button to Open Listing");
-		driver.findElement(By.xpath(CommonMethod.SelectRegisteredCity)).click();                // Select Car registered City
-		test.log(Status.PASS, "Select Registered City");
-		driver.findElement(By.xpath(SelectBodyColorButton)).click();                            // Select Color button  
-		test.log(Status.PASS, "Select Body Color Button to Open Listing");
-		driver.findElement(By.xpath(SelectColor)).click();                                      // Select Car color
-		test.log(Status.PASS, "Select Body Color");
-		driver.findElement(By.xpath(CommonMethod.EnterMileage)).sendKeys("1200");               // Enter mileage
-		test.log(Status.PASS, "Enter Mileage");
-		driver.findElement(By.xpath(CommonMethod.EnterPrice)).sendKeys("1500000");              // Enter price	
-		test.log(Status.PASS, "Enter Price");
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Additional Info\").instance(0))"));
-		driver.findElement(By.xpath(CommonMethod.EnterDescription)).sendKeys("Test By Appium"); // Enter description
-		test.log(Status.PASS, "Enter Description");
-		driver.findElement(By.xpath(ClickViewAllSuggestions)).click();                          // Select view all suggestion
-		test.log(Status.PASS, "Click View All Suggestions");
-		driver.findElement(By.xpath(Suggestion1)).click();                                      // Select suggestion
-		test.log(Status.PASS, "Select 1st Suggestion");
-		driver.findElement(By.xpath(Suggestion2)).click();                                      // Select suggestion  
-		test.log(Status.PASS, "Select 2nd Suggestion");
-		driver.findElement(By.xpath(Suggestion3)).click();                                      // Select suggestion  
-		test.log(Status.PASS, "Select 3rd Suggestion");
-		driver.findElement(By.xpath(Suggestion4)).click();                                      // Select suggestion  
-		test.log(Status.PASS, "Select 4th Suggestion");
-		driver.findElement(By.xpath(CommonMethod.ClickDoneButton)).click();                     // Select done button 	
-		test.log(Status.PASS, "Click Done Button");
-		driver.findElement(By.xpath(CommonMethod.ClickEngineTypeButton)).click();               // Select Engine type button
-		test.log(Status.PASS, "Select Engine Type Button to Open Listing");
-		driver.findElement(By.xpath(SelectEngineType)).click();                                 // Select engine type
-		test.log(Status.PASS, "Select Engine Type");
-		driver.findElement(By.xpath(EnterEngineCapacity)).sendKeys("1000");                     // Enter engine capacity
-		test.log(Status.PASS, "Select Engine Capacity");
-		driver.findElement(By.xpath(SelectTransmission)).click();                               // Select transmission
-		test.log(Status.PASS, "Select Transmission");
-		driver.findElement(By.xpath(SelectAssembly)).click();                                   // Select assembly
-		test.log(Status.PASS, "Select Assembly");
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Features\").instance(0))"));
-		driver.findElement(By.xpath(CommonMethod.SelectFeaturesButton)).click();                // Select feature button
-		test.log(Status.PASS, "Select Feature Button");
-		driver.findElement(By.xpath(Feature1)).click();                                         // Select feature
-		test.log(Status.PASS, "Select 1st Feature");
-		driver.findElement(By.xpath(Feature2)).click();                                         // Select feature
-		test.log(Status.PASS, "Select 2nd Feature");
-		driver.findElement(By.xpath(Feature3)).click();                                         // Select feature 
-		test.log(Status.PASS, "Select 3rd Feature");
-		driver.findElement(By.xpath(CommonMethod.ClickDoneButton)).click();                     // Select done button
-		test.log(Status.PASS, "Click Done Button");
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Contact Information\").instance(0))"));
-		CommonMethod.EnterMobileNumber();                                                       // Enter mobile number
-		test.log(Status.PASS, "Enter Mobile Number");
-		driver.findElement(By.xpath(CommonMethod.ClickPostYourAdButton)).click();  	            // Post Ad
-		test.log(Status.PASS, "Click Post Your Ad Button");
-		test.log(Status.INFO, "Test Successfully Completed");
+		
+		try{
+			CommonMethod.SetApplicationLanguage();                                                  
+			test.log(Status.PASS, "Verify that user can set application language (Test Data: English)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
+		}
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		try{
+			driver.findElement(By.id(CommonMethod.ClickSellButton)).click();                       
+			test.log(Status.PASS, "Verify that user can tap on Sell Button to select Ad type");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on Sell Button to select Ad type");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CarButton)).click();                               
+			test.log(Status.PASS, "Verify that user can Select Ad Type (Test Data: Car)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can Select Ad Type (Test Data: Car)");
+		}	
+		
+		try{
+			CommonMethod.Login();                                               
+			test.log(Status.PASS, "Verify that user can login (Test Data: Email)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
+		}
+				
+		try{
+			driver.findElement(By.xpath(PostAdByOwn)).click();                                  
+			test.log(Status.PASS, "Verify that user can select option for Car Ad (Test Data: Post By Own)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select option for Car Ad (Test Data: Post By Own)");
+		}	
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        	
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectAddPhotos)).click();                    
+			test.log(Status.PASS, "Verify that user can click on add photos button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can click on add photos button");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectUploadPhotoFromGallery)).click();     
+			test.log(Status.PASS, "Verify that user can select option to upload photos (Test Data: Upload Photos from gallery)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select option to upload photos (Test Data: Upload Photos from gallery)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectAllowButton)).click();         
+			test.log(Status.PASS, "Verify that user can select allow button to give access to Gallery");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+		}	
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);    
+		try{
+			driver.findElement(By.id(CommonMethod.SelectImage1)).click();     
+			test.log(Status.PASS, "Verify that user can select image for uploading (Test Data: 1st Image)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select image for uploading (Test Data: 1st Image)");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectImage2)).click();                  
+			test.log(Status.PASS, "Verify that user can select image for uploading (Test Data: 2nd Image)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select image for uploading (Test Data: 2nd Image)");	
+		}
+ 
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectImage3)).click();               
+			test.log(Status.PASS, "Verify that user can select image for uploading (Test Data: 3rd Image)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select image for uploading (Test Data: 3rd Image)");	
+		}
+		
+		try{
+			driver.findElement(By.id(CommonMethod.EndPicturesSelection)).click();                  	
+			test.log(Status.PASS, "Verify that user can end pictures selection by tapping on Tick Button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can end pictures selection by tapping on Tick Button");
+		}
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
+			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select location button to open cities listing");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                       
+			test.log(Status.PASS, "Verify that user can select city (Test Data: Lahore)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select city (Test Data: Lahore)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCityArea)).click();               
+			test.log(Status.PASS, "Verify that user can select city area (Test Data: Abid Market)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select city area (Test Data: Abid Market)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
+			test.log(Status.PASS, "Verify that user can select car model button to open model listing");		
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car model button to open model listing");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarYear)).click();                   
+			test.log(Status.PASS, "Verify that user can select car year (Test Data: 2021)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car year (Test Data: 2021)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarMakeModel)).click();              
+			test.log(Status.PASS, "Verify that user can select car make and model (Test Data: Alto)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car make and model (Test Data: Alto)");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectCarVersion)).click();               
+			test.log(Status.PASS, "Verify that user can select car version (Test Data: VX)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select car version (Test Data: VX)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectRegisteredInButton)).click();          
+			test.log(Status.PASS, "Verify that user can select registered-in button to open city listing");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select registered-in button to open city listing");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectRegisteredCity)).click();       
+			test.log(Status.PASS, "Verify that user can select registered city (Test Data: Punjab)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select registered city (Test Data: Punjab)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(SelectBodyColorButton)).click();                    
+			test.log(Status.PASS, "Verify that user can select body color button to open color listing");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select body color button to open color listing");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(SelectColor)).click();                            
+			test.log(Status.PASS, "Verify that user can select body color (Test Data: Black)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select body color (Test Data: Black)");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.EnterMileage)).sendKeys("1200");               
+			test.log(Status.PASS, "Verify that user can enter mileage (Test Data: 1200)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter mileage (Test Data: 1200)");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.EnterPrice)).sendKeys("1500000");            
+			test.log(Status.PASS, "Verify that user can enter price (Test Data: 1500000)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter price (Test Data: 1500000)");	
+		}
+		
+		CommonMethod.Scroll("Additional Info");
+		try{
+			driver.findElement(By.xpath(CommonMethod.EnterDescription)).sendKeys("Test By Appium"); 
+			test.log(Status.PASS, "Verify that user can enter description (Test Data: Test By Appium)");			
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter description (Test Data: Test By Appium)");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(ClickViewAllSuggestions)).click();    
+			test.log(Status.PASS, "Verify that user can tap on view all suggestions button");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can tap on view all suggestions button");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(Suggestion1)).click();                                      
+			test.log(Status.PASS, "Verify that user can select suggestion (Test Data: Auction Sheet Available)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select suggestion (Test Data: Auction Sheet Available)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(Suggestion2)).click();                                     
+			test.log(Status.PASS, "Verify that user can select suggestion (Test Data: Complete Original File)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select suggestion (Test Data: Complete Original File)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(Suggestion3)).click();                                   
+			test.log(Status.PASS, "Verify that user can select suggestion (Test Data: Driven on Petrol)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select suggestion (Test Data: Driven on Petrol)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(Suggestion4)).click();                                    
+			test.log(Status.PASS, "Verify that user can select suggestion (Test Data: Contact During Office Hours)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select suggestion (Test Data: Contact During Office Hours)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickDoneButton)).click();                   
+			test.log(Status.PASS, "Verify that user can select click on done button");			
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select click on done button");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickEngineTypeButton)).click();              
+			test.log(Status.PASS, "Verify that user can select engine type button to open engine listing");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select engine type button to open engine listing");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(SelectEngineType)).click();                             
+			test.log(Status.PASS, "Verify that user can select engine type (Test Data: Hybrid)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select engine type (Test Data: Hybrid)");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(EnterEngineCapacity)).sendKeys("1000");                 
+			test.log(Status.PASS, "Verify that user can enter engine capacity (Test Data: 1000)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can enter engine capacity (Test Data: 1000)");	
+		}
+	
+		try{
+			driver.findElement(By.xpath(SelectTransmission)).click();                     
+			test.log(Status.PASS, "Verify that user can select transmission (Test Data: Automatic)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select transmission (Test Data: Automatic)");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(SelectAssembly)).click();                              
+			test.log(Status.PASS, "Verify that user can select assembly (Test Data: Imported)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify that user can select assembly (Test Data: Imported)");	
+		}
+		
+		CommonMethod.Scroll("Features");
+		try{
+			driver.findElement(By.xpath(CommonMethod.SelectFeaturesButton)).click();                
+			test.log(Status.PASS, "Verify user can select feature button to open features listing");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can select feature button to open features listing");	
+		}
+		
+		try{
+			driver.findElement(By.xpath(Feature1)).click();                                    
+			test.log(Status.PASS, "Verify user can select feature (Test Data: Air Bags)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can select feature (Test Data: Air Bags)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(Feature2)).click();                                   
+			test.log(Status.PASS, "Verify user can select feature (Test Data: Cool Box)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can select feature (Test Data: Cool Box)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(Feature3)).click();                                        
+			test.log(Status.PASS, "Verify user can select feature (Test Data: Immobilizer Key)");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can select feature (Test Data: Immobilizer Key)");
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickDoneButton)).click();                    
+			test.log(Status.PASS, "Verify user can select done button to close feature listing");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can select done button to close feature listing");	
+		}
+		
+		CommonMethod.Scroll("Contact Information");
+		try{
+			CommonMethod.EnterMobileNumber();                                                      
+			test.log(Status.PASS, "Verify user can enter mobile number (Test Data: 03154954876)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can enter mobile number (Test Data: 03154954876)");		
+		}
+		
+		try{
+			driver.findElement(By.xpath(CommonMethod.ClickPostYourAdButton)).click();  	          
+			test.log(Status.PASS, "Verify user can select Post Your Ad button to post Ad");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can select Post Your Ad button to post Ad");
+		}
+		
+		test.log(Status.INFO, "Test Completed");
 	}
 }
