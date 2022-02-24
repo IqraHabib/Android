@@ -40,6 +40,7 @@ public class Finance extends SetDesiredCapabilities
 	@Test(priority = 0)
 	public void FinanceRequest_NewCars_FromMenu_WithOutLogin()
 	{	
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("FinanceRequest_NewCars_FromMenu_WithOutLogin");
 		driver.launchApp();
 		test.log(Status.INFO, "Test Started");	
@@ -51,7 +52,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -65,6 +66,8 @@ public class Finance extends SetDesiredCapabilities
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "Verify that user can navigate to Car Finance page by cliking on Finance button");
 		}
+		
+		test.log(Status.INFO, "User is navigated to Finance page");	
 		
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
@@ -136,6 +139,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select Calcuate button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Bank packages listing");	
 		try{
 			driver.findElement(By.xpath(ClickApplyNowForBank)).click();                        
 			test.log(Status.PASS, "Verify that user can tap on Apply Now button after selecting Bank");
@@ -143,6 +147,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can tap on Apply Now button after selecting Bank");
 		}
 
+		test.log(Status.INFO, "User is navigated to Finance form");	
 		try{
 			CommonMethod.EnterName();                                                     
 			test.log(Status.PASS, "Verify that user can enter name");
@@ -151,7 +156,7 @@ public class Finance extends SetDesiredCapabilities
 		}
 		
 		try{
-			driver.findElement(By.xpath(EnterEmail)).sendKeys("test@automation.com");                
+			driver.findElement(By.xpath(EnterEmail)).sendKeys(CommonMethod.Email);                
 			test.log(Status.PASS, "Verify that user can enter email");
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "Verify that user can enter email");
@@ -178,7 +183,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can enter CNIC");
 		}
 
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
@@ -311,6 +316,7 @@ public class Finance extends SetDesiredCapabilities
 	@Test(priority = 1)
 	public void FinanceRequest_NewCars_FromMenu_WithLogin()
 	{	
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("FinanceRequest_NewCars_FromMenu_WithLogin");
 		driver.launchApp();
 		test.log(Status.INFO, "Test Started");	
@@ -322,7 +328,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -344,7 +350,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);    
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);    
 		CommonMethod.Scroll("Car Finance");
 		
 		try {
@@ -354,6 +360,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can navigate to Car Finance page by cliking on Finance button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Finance page");	
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
 			test.log(Status.PASS, "Verify that user can select car model button to open model listing");		
@@ -424,6 +431,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select Calcuate button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Bank packages listing");	
 		try{
 			driver.findElement(By.xpath(ClickApplyNowForBank)).click();                        
 			test.log(Status.PASS, "Verify that user can tap on Apply Now button after selecting Bank");
@@ -431,6 +439,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can tap on Apply Now button after selecting Bank");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Finance form");	
 		try{
 			driver.findElement(By.xpath(EnterAge)).sendKeys("25");                                  
 			test.log(Status.PASS, "Verify that user can enter age");
@@ -445,7 +454,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can enter CNIC");
 		}
 
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
@@ -578,6 +587,7 @@ public class Finance extends SetDesiredCapabilities
 	@Test(priority = 2)
 	public void FinanceRequest_UsedCars_FromMenu_WithOutLogin()
 	{	
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("FinanceRequest_UsedCars_FromMenu_WithOutLogin");
 		driver.launchApp();
 		test.log(Status.INFO, "Test Started");	
@@ -589,7 +599,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -604,6 +614,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can navigate to Car Finance page by cliking on Finance button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Finance page");	
 		try {
 			driver.findElement(By.xpath(SelectUsedCarsSection)).click(); 
 			test.log(Status.PASS, "Verify that user can select Used Cars tab on finance page");
@@ -688,6 +699,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select Calcuate button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Bank packages listing");	
 		try{
 			driver.findElement(By.xpath(ClickApplyNowForBank)).click();                        
 			test.log(Status.PASS, "Verify that user can tap on Apply Now button after selecting Bank");
@@ -695,6 +707,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can tap on Apply Now button after selecting Bank");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Finance form");	
 		try{
 			CommonMethod.EnterName();                                                     
 			test.log(Status.PASS, "Verify that user can enter name");
@@ -703,7 +716,7 @@ public class Finance extends SetDesiredCapabilities
 		}
 		
 		try{
-			driver.findElement(By.xpath(EnterEmail)).sendKeys("test@automation.com");                
+			driver.findElement(By.xpath(EnterEmail)).sendKeys(CommonMethod.Email);                
 			test.log(Status.PASS, "Verify that user can enter email");
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "Verify that user can enter email");
@@ -730,7 +743,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can enter CNIC");
 		}
 
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
@@ -863,6 +876,7 @@ public class Finance extends SetDesiredCapabilities
 	@Test(priority = 3)
 	public void FinanceRequest_UsedCars_FromMenu_WithLogin()
 	{	
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("FinanceRequest_UsedCars_FromMenu_WithLogin");
 		driver.launchApp();
 		test.log(Status.INFO, "Test Started");	
@@ -874,7 +888,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -896,7 +910,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		CommonMethod.Scroll("Car Finance");
 		
 		try {
@@ -906,6 +920,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can navigate to Car Finance page by cliking on Finance button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Finance page");	
 		try {
 			driver.findElement(By.xpath(SelectUsedCarsSection)).click(); 
 			test.log(Status.PASS, "Verify that user can select Used Cars tab on finance page");
@@ -990,6 +1005,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select Calcuate button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Bank packages listing");	
 		try{
 			driver.findElement(By.xpath(ClickApplyNowForBank)).click();                        
 			test.log(Status.PASS, "Verify that user can tap on Apply Now button after selecting Bank");
@@ -997,6 +1013,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can tap on Apply Now button after selecting Bank");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Finance form");	
 		try{
 			driver.findElement(By.xpath(EnterAge)).sendKeys("25");                                  
 			test.log(Status.PASS, "Verify that user can enter age");
@@ -1011,7 +1028,7 @@ public class Finance extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can enter CNIC");
 		}
 
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");

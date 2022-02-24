@@ -7,6 +7,11 @@
 		<listener class-name="Resources.ExtentReporterNG"></listener>
 	</listeners>  
 
+	<test name="Sign-up">
+		<classes>	
+			<class name="SettingDriver.SignUp"/>
+		</classes>
+	</test>
 	<test name="AdPosting">
 	    <classes>	
 			<class name="AdPosting.CarAdPost"/>	

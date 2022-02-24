@@ -22,6 +22,7 @@ public class NewBikeSearch extends SetDesiredCapabilities
  	@Test(priority = 0)
  	public void NewBikesSearch()
  	{			
+ 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("New Bike Search");		
 		driver.launchApp();
 		test.log(Status.INFO, "Test Started");
@@ -33,7 +34,7 @@ public class NewBikeSearch extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	
 		try { 
 			driver.findElement(By.xpath(CommonMethod.SelectBikeTab)).click();   
 			test.log(Status.PASS, "Verify that user can select Bike tab from headers");
@@ -50,7 +51,7 @@ public class NewBikeSearch extends SetDesiredCapabilities
 		}
 			
 		test.log(Status.INFO, "User is navigated to Bike Make Listing Page");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);		
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);		
 		try {
 			driver.findElement(By.xpath(SelectBikeMake)).click();  
 			test.log(Status.PASS, "Verify that user can select Bike Make (Test Data: Honda)");
@@ -77,7 +78,7 @@ public class NewBikeSearch extends SetDesiredCapabilities
 		}
 		
 		CommonMethod.Scroll("Honda CD 70");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		try {
 			driver.findElement(By.xpath(SelectBikeModel)).click();  
 			test.log(Status.PASS, "Verify that user can select Bike Model (Test Data: Honda CD 70)");
@@ -87,7 +88,7 @@ public class NewBikeSearch extends SetDesiredCapabilities
 		
 		test.log(Status.INFO, "User is navigated to Bike Model Detail Page");
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	
 		try {
 			String text= driver.findElement(By.xpath(CommonMethod.ModelNameText)).getText();           
 			assertEquals(text, "Honda CD 70");	

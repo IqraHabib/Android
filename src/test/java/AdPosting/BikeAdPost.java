@@ -21,6 +21,7 @@ public class BikeAdPost extends SetDesiredCapabilities
 	@Test
 	public void BikeAdPostAfterLogin()
 	{	
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("Bike Ad Post");
 		driver.launchApp();
 		test.log(Status.INFO, "Test Started");	
@@ -32,7 +33,7 @@ public class BikeAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.id(CommonMethod.ClickSellButton)).click();                       
 			test.log(Status.PASS, "Verify that user can tap on Sell Button to select Ad type");
@@ -54,7 +55,8 @@ public class BikeAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        	
+		test.log(Status.INFO, "User is navigated to Sell Form");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        	
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectAddPhotos)).click();                    
 			test.log(Status.PASS, "Verify that user can click on add photos button");
@@ -69,13 +71,7 @@ public class BikeAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select option to upload photos (Test Data: Upload Photos from gallery)");
 		}
 		
-		try{
-			driver.findElement(By.xpath(CommonMethod.SelectAllowButton)).click();         
-			test.log(Status.PASS, "Verify that user can select allow button to give access to Gallery");
-		}catch(org.openqa.selenium.NoSuchElementException e){
-		}
-		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);    
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);    
 		try{
 			driver.findElement(By.id(CommonMethod.SelectImage1)).click();     
 			test.log(Status.PASS, "Verify that user can select image for uploading (Test Data: 1st Image)");
@@ -104,7 +100,7 @@ public class BikeAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can end pictures selection by tapping on Tick Button");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
@@ -175,6 +171,7 @@ public class BikeAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can enter mileage (Test Data: 1200)");	
 		}
 		
+		CommonMethod.Scroll("Description");
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickEngineTypeButton)).click();              
 			test.log(Status.PASS, "Verify that user can select engine type button to open engine listing");	

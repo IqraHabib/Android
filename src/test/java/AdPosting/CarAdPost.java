@@ -31,6 +31,7 @@ public class CarAdPost extends SetDesiredCapabilities
 	@Test
 	public void CarAdPostAfterLogin()
 	{	
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("Car Ad Post");
 		test.log(Status.INFO, "Test Started");	
 		
@@ -41,7 +42,7 @@ public class CarAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.id(CommonMethod.ClickSellButton)).click();                       
 			test.log(Status.PASS, "Verify that user can tap on Sell Button to select Ad type");
@@ -70,7 +71,8 @@ public class CarAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select option for Car Ad (Test Data: Post By Own)");
 		}	
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        	
+		test.log(Status.INFO, "User is navigated to Sell Form");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        	
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectAddPhotos)).click();                    
 			test.log(Status.PASS, "Verify that user can click on add photos button");
@@ -91,7 +93,7 @@ public class CarAdPost extends SetDesiredCapabilities
 		}catch(org.openqa.selenium.NoSuchElementException e){
 		}	
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);    
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);    
 		try{
 			driver.findElement(By.id(CommonMethod.SelectImage1)).click();     
 			test.log(Status.PASS, "Verify that user can select image for uploading (Test Data: 1st Image)");
@@ -120,7 +122,7 @@ public class CarAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can end pictures selection by tapping on Tick Button");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
@@ -205,6 +207,7 @@ public class CarAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can enter mileage (Test Data: 1200)");	
 		}
 		
+		CommonMethod.Scroll("Description");
 		try{
 			driver.findElement(By.xpath(CommonMethod.EnterPrice)).sendKeys("1500000");            
 			test.log(Status.PASS, "Verify that user can enter price (Test Data: 1500000)");
@@ -290,6 +293,7 @@ public class CarAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select transmission (Test Data: Automatic)");		
 		}
 		
+		CommonMethod.Scroll("Assembly");
 		try{
 			driver.findElement(By.xpath(SelectAssembly)).click();                              
 			test.log(Status.PASS, "Verify that user can select assembly (Test Data: Imported)");
@@ -319,6 +323,7 @@ public class CarAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify user can select feature (Test Data: Cool Box)");
 		}
 		
+		CommonMethod.Scroll("Immobilizer Key");
 		try{
 			driver.findElement(By.xpath(Feature3)).click();                                        
 			test.log(Status.PASS, "Verify user can select feature (Test Data: Immobilizer Key)");
@@ -333,7 +338,7 @@ public class CarAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify user can select done button to close feature listing");	
 		}
 		
-		CommonMethod.Scroll("Contact Information");
+		CommonMethod.Scroll("Post Your Ad");
 		try{
 			CommonMethod.EnterMobileNumber();                                                      
 			test.log(Status.PASS, "Verify user can enter mobile number (Test Data: 03154954876)");	

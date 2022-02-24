@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-23T18:28:56 PKT" name="Default suite" finished-at="2022-02-23T18:30:21 PKT" duration-ms="85301">
+  <suite started-at="2022-02-24T18:11:51 PKT" name="Default suite" finished-at="2022-02-24T18:13:30 PKT" duration-ms="99433">
     <groups>
     </groups>
-    <test started-at="2022-02-23T18:28:56 PKT" name="Default test" finished-at="2022-02-23T18:30:21 PKT" duration-ms="85301">
-      <class name="LeadForms.AuctionSheet">
-        <test-method is-config="true" signature="beforeSuiteSetup()[pri:0, instance:LeadForms.AuctionSheet@2a8448fa]" started-at="2022-02-23T18:28:55 PKT" name="beforeSuiteSetup" finished-at="2022-02-23T18:28:56 PKT" duration-ms="152" status="PASS">
+    <test started-at="2022-02-24T18:11:51 PKT" name="Default test" finished-at="2022-02-24T18:13:30 PKT" duration-ms="99433">
+      <class name="LeadForms.SellItForMe">
+        <test-method is-config="true" signature="beforeSuiteSetup()[pri:0, instance:LeadForms.SellItForMe@2a8448fa]" started-at="2022-02-24T18:11:51 PKT" name="beforeSuiteSetup" finished-at="2022-02-24T18:11:51 PKT" duration-ms="169" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuiteSetup -->
-        <test-method is-config="true" signature="SetCapabilities()[pri:0, instance:LeadForms.AuctionSheet@2a8448fa]" started-at="2022-02-23T18:28:56 PKT" name="SetCapabilities" finished-at="2022-02-23T18:29:12 PKT" duration-ms="16374" status="PASS">
+        <test-method is-config="true" signature="SetCapabilities()[pri:0, instance:LeadForms.SellItForMe@2a8448fa]" started-at="2022-02-24T18:11:51 PKT" name="SetCapabilities" finished-at="2022-02-24T18:12:05 PKT" duration-ms="13948" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetCapabilities -->
-        <test-method signature="AuctionSheetRequest_WithoutLogin()[pri:0, instance:LeadForms.AuctionSheet@2a8448fa]" started-at="2022-02-23T18:29:12 PKT" name="AuctionSheetRequest_WithoutLogin" finished-at="2022-02-23T18:29:41 PKT" duration-ms="28835" status="PASS">
+        <test-method signature="SellItForMeRequest_WithoutLogin()[pri:0, instance:LeadForms.SellItForMe@2a8448fa]" started-at="2022-02-24T18:12:05 PKT" name="SellItForMeRequest_WithoutLogin" finished-at="2022-02-24T18:12:44 PKT" duration-ms="39327" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AuctionSheetRequest_WithoutLogin -->
-        <test-method signature="AuctionSheetRequest_WithLogin()[pri:1, instance:LeadForms.AuctionSheet@2a8448fa]" started-at="2022-02-23T18:29:41 PKT" name="AuctionSheetRequest_WithLogin" finished-at="2022-02-23T18:30:21 PKT" duration-ms="40055" status="PASS">
+        </test-method> <!-- SellItForMeRequest_WithoutLogin -->
+        <test-method signature="SellItForMeRequest_WithLogin()[pri:1, instance:LeadForms.SellItForMe@2a8448fa]" started-at="2022-02-24T18:12:44 PKT" name="SellItForMeRequest_WithLogin" finished-at="2022-02-24T18:13:30 PKT" duration-ms="46120" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AuctionSheetRequest_WithLogin -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:LeadForms.AuctionSheet@2a8448fa]" started-at="2022-02-23T18:30:21 PKT" name="afterSuite" finished-at="2022-02-23T18:30:21 PKT" duration-ms="279" status="PASS">
+        </test-method> <!-- SellItForMeRequest_WithLogin -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:LeadForms.SellItForMe@2a8448fa]" started-at="2022-02-24T18:13:30 PKT" name="afterSuite" finished-at="2022-02-24T18:13:31 PKT" duration-ms="298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- LeadForms.AuctionSheet -->
+      </class> <!-- LeadForms.SellItForMe -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

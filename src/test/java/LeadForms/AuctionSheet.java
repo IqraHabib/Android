@@ -18,6 +18,7 @@ public class AuctionSheet extends SetDesiredCapabilities
 	@Test(priority = 0)
 	public void AuctionSheetRequest_WithoutLogin()
 	{
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("Auction Sheet Request- Without Login");
 		driver.launchApp();	
 		test.log(Status.INFO, "Test Started");	
@@ -29,7 +30,7 @@ public class AuctionSheet extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -51,6 +52,7 @@ public class AuctionSheet extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can navigate to Auction Sheet page by cliking on Auction Sheet button");	
 		}
 		
+		test.log(Status.INFO, "User is navigated to Auction Sheet page");
 		try{
 			driver.findElement(By.xpath(EnterChasisNumber)).sendKeys("RU3-1041850");
 			test.log(Status.PASS, "Verify that user can enter chasis number (Test Data: RU3-1041850)");
@@ -65,7 +67,8 @@ public class AuctionSheet extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can click on Get Auction Sheet Button");	
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
+		test.log(Status.INFO, "User is navigated to Auction Sheet Form");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		try{
 			CommonMethod.EnterName();                                                     
 			test.log(Status.PASS, "Verify that user can enter name");
@@ -87,13 +90,13 @@ public class AuctionSheet extends SetDesiredCapabilities
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "Verify that user can click on Proceed To CheckOut button");
 		}
-		
 		test.log(Status.INFO, "Test Completed");
 	}
 	
 	@Test(priority = 1)
 	public void AuctionSheetRequest_WithLogin()
 	{
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("Auction Sheet Request- With Login");
 		driver.launchApp();	
 		test.log(Status.INFO, "Test Started");	
@@ -105,7 +108,7 @@ public class AuctionSheet extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -127,8 +130,8 @@ public class AuctionSheet extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                 
-		CommonMethod.Scroll("Blog");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                 
+		CommonMethod.Scroll("Car Finance");
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectUsedCars)).click();                
 			test.log(Status.PASS, "Verify that user can tap on Used Cars button to open Drop-Down");
@@ -143,6 +146,7 @@ public class AuctionSheet extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can navigate to Auction Sheet page by cliking on Auction Sheet button");	
 		}
 		
+		test.log(Status.INFO, "User is navigated to Auction Sheet page");
 		try{
 			driver.findElement(By.xpath(EnterChasisNumber)).sendKeys("RU3-1041850");
 			test.log(Status.PASS, "Verify that user can enter chasis number (Test Data: RU3-1041850)");
@@ -157,7 +161,8 @@ public class AuctionSheet extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can click on Get Auction Sheet Button");	
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
+		test.log(Status.INFO, "User is navigated to Auction Sheet Form");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		CommonMethod.Scroll("Proceed To CheckOut");
 		try{
 			driver.findElement(By.xpath(ClickProceedToCheckOut)).click();  
@@ -165,7 +170,6 @@ public class AuctionSheet extends SetDesiredCapabilities
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "Verify that user can click on Proceed To CheckOut button");
 		}
-		
 		test.log(Status.INFO, "Test Completed");
 	}
 }

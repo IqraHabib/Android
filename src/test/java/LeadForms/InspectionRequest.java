@@ -16,6 +16,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 	@Test(priority = 0)
 	public void InspectionRequest_FromMenu_WithOutLogin()
 	{		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("InspectionRequest_FromMenu_WithOutLogin");
 		driver.launchApp();		
 		test.log(Status.INFO, "Test Started");	
@@ -27,7 +28,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -49,7 +50,8 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can navigate to Inspection page by cliking on Inspection button");	
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		test.log(Status.INFO, "User is navigated to Inspection page");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(InspectionFormButton)).click();                    
 			test.log(Status.PASS, "Verify that user can tap on Schedule Inspection button");
@@ -57,7 +59,8 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can tap on Schedule Inspection button");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);               
+		test.log(Status.INFO, "User is navigated to Inspection form");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);               
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
 			test.log(Status.PASS, "Verify that user can select car model button to open model listing");		
@@ -79,7 +82,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select car make and model (Test Data: Alto)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");
@@ -135,6 +138,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 	@Test(priority = 1)
 	public void InspectionRequest_FromMenu_WithLogin()
 	{	
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("InspectionRequest_FromMenu_WithLogin");
 		driver.launchApp();	
 		test.log(Status.INFO, "Test Started");	
@@ -146,7 +150,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);              
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);              
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");
@@ -168,7 +172,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can login (Test Data: Email)");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectUsedCars)).click();                
 			test.log(Status.PASS, "Verify that user can tap on Used Cars button to open Drop-Down");
@@ -183,7 +187,8 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can navigate to Inspection page by cliking on Inspection button");	
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		test.log(Status.INFO, "User is navigated to Inspection page");
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
 		try{
 			driver.findElement(By.xpath(InspectionFormButton)).click();                    
 			test.log(Status.PASS, "Verify that user can tap on Schedule Inspection button");
@@ -191,6 +196,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can tap on Schedule Inspection button");
 		}
 		
+		test.log(Status.INFO, "User is navigated to Inspection form");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);               
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
@@ -213,7 +219,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select car make and model (Test Data: Alto)");		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                        
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");

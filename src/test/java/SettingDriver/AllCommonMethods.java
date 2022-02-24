@@ -6,6 +6,14 @@ import io.appium.java_client.MobileBy;
 
 public class AllCommonMethods extends SetDesiredCapabilities
 {
+	public String ContinueWithEmail= "//android.widget.Button[@text='Continue with Email']";
+	public String EnterUserName= "//android.widget.EditText[@text='username@email.com']";
+	public String EnterPassword= "//android.widget.EditText[@text='Enter password']";
+	public String Name= "Testing through Appium";
+	public String Email= "testautomation2@mailinator.com";
+	public String MobileNumber= "03154954876";
+	public String Password= "1234567";
+	
 	public String ClickHomeButton= "//android.widget.TextView[@text='Home']";
 	public String ClickMoreButton= "//android.widget.FrameLayout[@index='4']";
 	public String ClickSubmitButton= "//android.widget.Button[@text='Submit']";
@@ -56,23 +64,24 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	public void Login()
 	{
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                                    // Wait for screen to update
-		driver.findElement(By.xpath("//android.widget.Button[@text='Continue with Email']")).click();       // Select Email as Login Option
+		Scroll("Continue with Email");
+		driver.findElement(By.xpath(ContinueWithEmail)).click();                                            // Select Email as Login Option
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                                    // Wait for screen to update
-		driver.findElement(By.xpath("//android.widget.EditText[@text='username@email.com']")).sendKeys("testpw152@mailinator.com");  //Enter Email
-		driver.findElement(By.xpath("//android.widget.EditText[@text='Enter password']")).sendKeys("1234567");   // Enter Password
-		driver.findElement(By.xpath("//android.widget.Button[@text='Sign in']")).click();                   // Select Sign-in button
+		driver.findElement(By.xpath(EnterUserName)).sendKeys(Email);                                        //Enter Email
+		driver.findElement(By.xpath(EnterPassword)).sendKeys(Password);                                    // Enter Password
+		driver.findElement(By.xpath(ClickSignInButton)).click();                                            // Select Sign-in button
 	}
 	public void EnterName()
 	{
-		driver.findElement(By.xpath("//android.widget.EditText[@text='Enter Name']")).sendKeys("Testing through Appium");   // Enter Name
+		driver.findElement(By.xpath("//android.widget.EditText[@text='Enter Name']")).sendKeys(Name);                      // Enter Name
 	}
 	public void EnterMobileNumber()
 	{
-		driver.findElement(By.xpath("//android.widget.EditText[@text='Enter Mobile Number']")).sendKeys("03154954876");     // Enter Phone Number
+		driver.findElement(By.xpath("//android.widget.EditText[@text='Enter Mobile Number']")).sendKeys(MobileNumber);     // Enter Phone Number
 	}
 	public void EnterEmail()
 	{
-		driver.findElement(By.xpath("//android.widget.EditText[@text='Email (Optional)']")).sendKeys("testpw150@mailinator.com");   // Enter Email
+		driver.findElement(By.xpath("//android.widget.EditText[@text='Email (Optional)']")).sendKeys(Email);               // Enter Email
 	}
 	public void Scroll (String text)
 	{
