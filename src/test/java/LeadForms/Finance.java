@@ -315,7 +315,7 @@ public class Finance extends SetDesiredCapabilities
 	
 	@Test(priority = 1)
 	public void FinanceRequest_NewCars_FromMenu_WithLogin()
-	{	
+	{	 
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("FinanceRequest_NewCars_FromMenu_WithLogin");
 		driver.launchApp();
@@ -440,6 +440,13 @@ public class Finance extends SetDesiredCapabilities
 		}
 		
 		test.log(Status.INFO, "User is navigated to Finance form");	
+		
+		try{
+			CommonMethod.EnterMobileNumber();                                             
+			test.log(Status.PASS, "Verify that user can enter mobile number");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+		}
+		
 		try{
 			driver.findElement(By.xpath(EnterAge)).sendKeys("25");                                  
 			test.log(Status.PASS, "Verify that user can enter age");
@@ -1014,6 +1021,13 @@ public class Finance extends SetDesiredCapabilities
 		}
 		
 		test.log(Status.INFO, "User is navigated to Finance form");	
+		
+		try{
+			CommonMethod.EnterMobileNumber();                                             
+			test.log(Status.PASS, "Verify that user can enter mobile number");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+		}
+		
 		try{
 			driver.findElement(By.xpath(EnterAge)).sendKeys("25");                                  
 			test.log(Status.PASS, "Verify that user can enter age");

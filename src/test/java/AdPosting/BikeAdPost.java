@@ -222,7 +222,14 @@ public class BikeAdPost extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify user can select done button to close feature listing");	
 		}
 	
-		CommonMethod.Scroll("Contact Information");
+		CommonMethod.Scroll("Post Your Ad");
+		try{
+			CommonMethod.EnterMobileNumber();                                                      
+			test.log(Status.PASS, "Verify user can enter mobile number (Test Data: 03154954876)");	
+		}catch(org.openqa.selenium.NoSuchElementException e){
+			test.log(Status.FAIL, "Verify user can enter mobile number (Test Data: 03154954876)");		
+		}
+		
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickPostYourAdButton)).click();  	          
 			test.log(Status.PASS, "Verify user can select Post Your Ad button to post Ad");

@@ -224,6 +224,12 @@ public class SellItForMe extends SetDesiredCapabilities
 		}
 	
 		try{
+			CommonMethod.EnterMobileNumber();                                             
+			test.log(Status.PASS, "Verify that user can enter mobile number");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+		}
+		
+		try{
 			driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();           
 			test.log(Status.PASS, "Verify that user can select submit button");
 		}catch(org.openqa.selenium.NoSuchElementException e){

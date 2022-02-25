@@ -197,7 +197,7 @@ public class InspectionRequest extends SetDesiredCapabilities
 		}
 		
 		test.log(Status.INFO, "User is navigated to Inspection form");
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);               
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);               
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectCarModelButton)).click();          
 			test.log(Status.PASS, "Verify that user can select car model button to open model listing");		
@@ -241,6 +241,12 @@ public class InspectionRequest extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select city area (Test Data: Abid Market)");
 		}
 
+		try{
+			CommonMethod.EnterMobileNumber();                                             
+			test.log(Status.PASS, "Verify that user can enter mobile number");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+		}
+		
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickSubmitButton)).click();           
 			test.log(Status.PASS, "Verify that user can select submit button");

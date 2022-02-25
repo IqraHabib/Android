@@ -164,6 +164,13 @@ public class AuctionSheet extends SetDesiredCapabilities
 		test.log(Status.INFO, "User is navigated to Auction Sheet Form");
 		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		CommonMethod.Scroll("Proceed To CheckOut");
+		
+		try{
+			CommonMethod.EnterMobileNumber();                                             
+			test.log(Status.PASS, "Verify that user can enter mobile number");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+		}
+		
 		try{
 			driver.findElement(By.xpath(ClickProceedToCheckOut)).click();  
 			test.log(Status.PASS, "Verify that user can click on Proceed To CheckOut button");

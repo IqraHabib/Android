@@ -18,6 +18,8 @@ public class SignUp extends SetDesiredCapabilities
 	public void SignUpViaEmail()
 	{
 		ExtentTest test= extent.createTest("Sign Up Via Email");
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
+		test.log(Status.INFO, "Sprint 114");	
 		test.log(Status.INFO, "Test Started");	
 		
 		try{
@@ -26,8 +28,7 @@ public class SignUp extends SetDesiredCapabilities
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "Verify that user can set application language (Test Data: English)");		
 		}
-		
-		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);                  
+		               
 		try{
 			driver.findElement(By.xpath(CommonMethod.ClickMoreButton)).click();            
 			test.log(Status.PASS, "Verify that user can navigate to menu page by clicking more button");

@@ -10,7 +10,7 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	public String EnterUserName= "//android.widget.EditText[@text='username@email.com']";
 	public String EnterPassword= "//android.widget.EditText[@text='Enter password']";
 	public String Name= "Testing through Appium";
-	public String Email= "testautomation2@mailinator.com";
+	public String Email= "testautomation5@mailinator.com";
 	public String MobileNumber= "03154954876";
 	public String Password= "1234567";
 	

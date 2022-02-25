@@ -31,7 +31,7 @@ public class CarAdPost extends SetDesiredCapabilities
 	@Test
 	public void CarAdPostAfterLogin()
 	{	
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); 
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
 		ExtentTest test= extent.createTest("Car Ad Post");
 		test.log(Status.INFO, "Test Started");	
 		

@@ -5,12 +5,24 @@
     <listener class-name="Resources.Listeners"/>
     <listener class-name="Resources.ExtentReporterNG"/>
   </listeners>
+  <test thread-count="5" name="LeadForms(failed)">
+    <classes>
+      <class name="LeadForms.SellItForMe">
+        <methods>
+          <include name="beforeSuiteSetup"/>
+          <include name="SellItForMeRequest_WithLogin"/>
+          <include name="afterSuite"/>
+          <include name="SetCapabilities"/>
+        </methods>
+      </class> <!-- LeadForms.SellItForMe -->
+    </classes>
+  </test> <!-- LeadForms(failed) -->
   <test thread-count="5" name="Search(failed)">
     <classes>
       <class name="Search.NewBikeSearch">
         <methods>
-          <include name="Scroll"/>
           <include name="beforeSuiteSetup"/>
+          <include name="NewBikesSearch"/>
           <include name="afterSuite"/>
           <include name="SetCapabilities"/>
         </methods>

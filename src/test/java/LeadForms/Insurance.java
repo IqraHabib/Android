@@ -250,6 +250,13 @@ public class Insurance extends SetDesiredCapabilities
 		}
 
 		test.log(Status.INFO, "User is navigated to Insurance form");
+		
+		try{
+			CommonMethod.EnterMobileNumber();                                             
+			test.log(Status.PASS, "Verify that user can enter mobile number");
+		}catch(org.openqa.selenium.NoSuchElementException e){
+		}
+		
 		try{
 			driver.findElement(By.xpath(CommonMethod.SelectLocationButton)).click();                
 			test.log(Status.PASS, "Verify that user can select location button to open cities listing");

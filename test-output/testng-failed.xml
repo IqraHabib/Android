@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Resources.Listeners"/>
+    <listener class-name="Resources.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="LeadForms(failed)">
     <classes>
-      <class name="AdPosting.CarAdPost">
+      <class name="LeadForms.SellItForMe">
         <methods>
           <include name="beforeSuiteSetup"/>
+          <include name="SellItForMeRequest_WithLogin"/>
           <include name="afterSuite"/>
-          <include name="CarAdPostAfterLogin"/>
           <include name="SetCapabilities"/>
         </methods>
-      </class> <!-- AdPosting.CarAdPost -->
+      </class> <!-- LeadForms.SellItForMe -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- LeadForms(failed) -->
+  <test thread-count="5" name="Search(failed)">
+    <classes>
+      <class name="Search.NewBikeSearch">
+        <methods>
+          <include name="beforeSuiteSetup"/>
+          <include name="NewBikesSearch"/>
+          <include name="afterSuite"/>
+          <include name="SetCapabilities"/>
+        </methods>
+      </class> <!-- Search.NewBikeSearch -->
+    </classes>
+  </test> <!-- Search(failed) -->
+</suite> <!-- Failed suite [Suite] -->

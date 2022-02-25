@@ -3,8 +3,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -29,16 +27,14 @@ public class SetDesiredCapabilities extends ExtentReporterNG
 				cap.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());*/
 				
 				cap.setCapability("platformName", "Android");
-				cap.setCapability("deviceName", "Samsung");
-				cap.setCapability("udid", "ce11160bc0d3852a02");
+				cap.setCapability("deviceName", "Redmi 9C");
+				cap.setCapability("udid", "IJXKZ9HI95A6PZW4");
 				cap.setCapability("automationName", "UiAutomator2");
 				cap.setCapability("platformVersion", "10.0.0");
 				cap.setCapability("appPackage", "com.pakwheels.staging");
 				cap.setCapability("appActivity", "com.pakwheels.activities.other.SplashScreenActivity");
-			//	cap.setCapability("unicodeKeyboard", true);
-			//	cap.setCapability("resetKeyboard", true);
-				//cap.setCapability(MobileCapabilityType.NO_RESET, "true");
-				//cap.setCapability(MobileCapabilityType.FULL_RESET, "false");
+				//cap.setCapability("unicodeKeyboard", true);
+				//cap.setCapability("resetKeyboard", true);
 				driver = new AppiumDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 			}
 			catch(Exception exp) 
