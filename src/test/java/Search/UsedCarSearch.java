@@ -1,5 +1,8 @@
 package Search;
 import static org.testng.Assert.assertEquals;
+
+import java.awt.Dimension;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -7,6 +10,10 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import SettingDriver.AllCommonMethods;
 import SettingDriver.SetDesiredCapabilities;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class UsedCarSearch extends SetDesiredCapabilities
 {
@@ -15,6 +22,7 @@ public class UsedCarSearch extends SetDesiredCapabilities
 	private String SearchBar= "//android.widget.TextView[@text= 'Search used cars']";
 	private String EnterTextInSearchBar= "//android.widget.EditText[@text= 'Search used cars']";
 	
+	@SuppressWarnings("rawtypes")
 	@Test(priority = 0)
  	public void UsedCarSearch_Honda()
  	{
@@ -88,8 +96,11 @@ public class UsedCarSearch extends SetDesiredCapabilities
 			test.log(Status.FAIL, "Verify that user can select Ad from Car Listing Page");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	
-		CommonMethod.Scroll("Similar Ads");
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().textContains(\"Similar Ads\")).scrollForward()"));
+		
+		//CommonMethod.Scroll("Seller Comments");
 		try{
 			String text= driver.findElement(By.xpath(CommonMethod.SimilarAdsText)).getText();          
 			assertEquals(text, "Similar Ads");
@@ -97,7 +108,7 @@ public class UsedCarSearch extends SetDesiredCapabilities
 		}catch(AssertionError e){
 			test.log(Status.FAIL, "Verify that Similar Ads section is displayed");
 		}	
-		
+
 		test.log(Status.INFO, "Test Completed");
  	}
 }
