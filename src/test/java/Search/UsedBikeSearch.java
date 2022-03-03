@@ -38,11 +38,6 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 	private String NotifyMe= "com.pakwheels.staging:id/btn_create_alert";
 	private String SelectCreateAlert= "//android.widget.Button[@text= 'Create Alert']";
 	
-	private String SellerCommentsText= "//android.widget.TextView[@text= 'Seller Comments']";
-	private String FeaturesText= "//android.widget.TextView[@text= 'Features']";
-	private String SellerDetailText= "//android.widget.TextView[@text= 'Seller Detail']";
-	private String VisitSellerDetailsPage= "com.pakwheels.staging:id/iv_email_verified_detail_page";
-	private String SelectBackButton= "//android.widget.ImageButton";
 	private String WantToSellBikeText= "//android.widget.TextView[@text= 'Want to Sell Your Bike?']";
 	
 	@Test(priority = 0)
@@ -98,19 +93,6 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		
 		test.log(Status.INFO, "User is navigated to Bike Page");	
 		
-		try { 
-			driver.findElement(By.xpath(SelectCityFromSearchBar)).click();   
-			test.log(Status.PASS, "Verify that user can select All-City to update City from Search Bar");
-		}catch(org.openqa.selenium.NoSuchElementException e){
-			test.log(Status.FAIL, "Verify that user can select All-City to update City from Search Bar");
-		}
-		
-		try { 
-			driver.findElement(By.xpath(CommonMethod.SelectCity)).click();                 
-			test.log(Status.PASS, "Verify that user can select City from drop-down");
-		}catch(org.openqa.selenium.NoSuchElementException e){
-			test.log(Status.FAIL, "Verify that user can select City from drop-down");
-		}
 		
 		try{
 			driver.findElement(By.xpath(SearchBar)).click();   
@@ -307,7 +289,7 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		
 		CommonMethod.Scroll("Seller Comments");
 		try{
-			String text= driver.findElement(By.xpath(SellerCommentsText)).getText();  
+			String text= driver.findElement(By.xpath(CommonMethod.SellerCommentsText)).getText();  
 			assertEquals(text, "Seller Comments");
 			test.log(Status.PASS, "Verify Seller Comments section is displayed");
 	    }catch(AssertionError e){
@@ -316,7 +298,7 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		
 		CommonMethod.Scroll("Features");
 		try{
-			String text= driver.findElement(By.xpath(FeaturesText)).getText();          
+			String text= driver.findElement(By.xpath(CommonMethod.FeaturesText)).getText();          
 			assertEquals(text, "Features");
 			test.log(Status.PASS, "Verify Features section is displayed");
 		}catch(AssertionError e){
@@ -325,7 +307,7 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		
 		CommonMethod.Scroll("Seller Detail");
 		try{
-			String text= driver.findElement(By.xpath(SellerDetailText)).getText();          
+			String text= driver.findElement(By.xpath(CommonMethod.SellerDetailText)).getText();          
 			assertEquals(text, "Seller Detail");
 			test.log(Status.PASS, "Verify Seller Detail section is displayed");
 		}catch(AssertionError e){
@@ -333,14 +315,14 @@ public class UsedBikeSearch extends SetDesiredCapabilities
 		}
 		
 		try{ 
-			driver.findElement(By.id(VisitSellerDetailsPage)).click(); 
+			driver.findElement(By.id(CommonMethod.VisitSellerDetailsPage)).click(); 
 			test.log(Status.PASS, "Verify that user can visit Seller Detail Page");
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "Verify that user can visit Seller Detail Page");
 		}	
 		
 		try{ 
-			driver.findElement(By.xpath(SelectBackButton)).click(); 
+			driver.findElement(By.xpath(CommonMethod.SelectBackButton)).click(); 
 			test.log(Status.PASS, "Verify that user can get back from visiting Seller Details page");
 		}catch(org.openqa.selenium.NoSuchElementException e){
 			test.log(Status.FAIL, "BVerify that user can get back from visiting Seller Details page");

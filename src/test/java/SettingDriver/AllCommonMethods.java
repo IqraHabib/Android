@@ -1,6 +1,7 @@
 package SettingDriver;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidSelectorException;
 
 import io.appium.java_client.MobileBy;
 
@@ -55,6 +56,12 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	public String SelectAd= "com.pakwheels.staging:id/txtview_ad_title_search_action_item";
 	public String SimilarAdsText= "//android.widget.TextView[@text= 'Similar Ads']";
 	
+	public String SellerCommentsText= "//android.widget.TextView[@text= 'Seller Comments']";
+	public String FeaturesText= "//android.widget.TextView[@text= 'Features']";
+	public String SellerDetailText= "//android.widget.TextView[@text= 'Seller Detail']";
+	public String VisitSellerDetailsPage= "com.pakwheels.staging:id/iv_email_verified_detail_page";
+	public String SelectBackButton= "//android.widget.ImageButton";
+	
 	public void SetApplicationLanguage()
 	{
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -86,5 +93,23 @@ public class AllCommonMethods extends SetDesiredCapabilities
 	public void Scroll (String text)
 	{
 		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+text+"\").instance(0))"));
+	}
+	public void ScrollSecondView (String text)
+	{
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(1))" + ".scrollIntoView(new UiSelector().text(\""+text+"\"))"));
+	}
+	public void ScrollForward()
+	{
+		try {
+		    driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward()"));
+		}catch (InvalidSelectorException e) {
+		}
+	}
+	public void ScrollToBeginning()
+	{
+		try {
+		    driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).flingToBeginning(10)"));
+		} catch (InvalidSelectorException e) {
+		}
 	}
 }
