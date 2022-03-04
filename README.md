@@ -165,7 +165,7 @@ There are two ways to install testng.
 
 **8. Connect Real Android Device**
 ---
-Article : https://developer.chrome.com/docs/devtools/remote-debugging/
+Article: https://developer.chrome.com/docs/devtools/remote-debugging/
 Enabling developer options: Settings > About phone > Build number (Tap 7 times)
 Enable USB debugging: Developer options > Check USB debugging > OK
 
