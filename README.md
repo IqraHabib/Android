@@ -11,13 +11,13 @@
 
 3- Setup environment variable. For that Go to This PC > right click > properties > advanced system settings > environment variable. Now, add path in system variable as
 
-   **Name:** JAVA_HOME
+   * **Name:** JAVA_HOME
 
-   **Value:** C:\Program Files\Java\jdk1.8.0_291
+   * **Value:** C:\Program Files\Java\jdk1.8.0_291
 
 4- Also, edit the “path” in the system variable as:
 
-   **Path:** C:\Program Files\Java\jdk1.8.0_291\bin
+   * **Path:** C:\Program Files\Java\jdk1.8.0_291\bin
 
 5- Go to cmd and write “java -version” to know if java is installed.
 
@@ -30,7 +30,7 @@
 ----
 1- Go to this website and download: 
 
-**Website Link:** https://developer.android.com/studio?gclid=Cj0KCQiAip-PBhDVARIsAPP2xc29H20LpmsFgY6R7qnBg1-AqoFLo3YU-XM1SrMVcvw_BnFK1BHFkyQaAm9AEALw_wcB&gclsrc=aw.ds
+* **Website Link:** https://developer.android.com/studio?gclid=Cj0KCQiAip-PBhDVARIsAPP2xc29H20LpmsFgY6R7qnBg1-AqoFLo3YU-XM1SrMVcvw_BnFK1BHFkyQaAm9AEALw_wcB&gclsrc=aw.ds
 
 2- Install it by clicking next
 
@@ -40,17 +40,17 @@
 
 5- Set system variables
 
-**Name:** ANDROID_HOME
+* **Name:** ANDROID_HOME
 
-**Value:** C:\Users\PakWheels\AppData\Local\Android\Sdk
+* **Value:** C:\Users\PakWheels\AppData\Local\Android\Sdk
 
 6- Edit in path variable under system variables and add these:
 
-**Path:** C:\Users\PakWheels\AppData\Local\Android\Sdk\tools\bin
+* **Path:** C:\Users\PakWheels\AppData\Local\Android\Sdk\tools\bin
 
-**Path:** C:\Users\PakWheels\AppData\Local\Android\Sdk\tools
+* **Path:** C:\Users\PakWheels\AppData\Local\Android\Sdk\tools
 
-**Path:** C:\Users\PakWheels\AppData\Local\Android\Sdk\platform-tools
+* **Path:** C:\Users\PakWheels\AppData\Local\Android\Sdk\platform-tools
 
 
 
@@ -59,37 +59,37 @@
 ---
 There are two ways to install appium
 
-1- Appium through cmd
+**1- Appium through cmd**
 
 1. First we need to install Node
 
 2. Go to website and Download .msi file
 
-   **Website Link:** https://nodejs.org/en/download/
+  * **Website Link:** https://nodejs.org/en/download/
 
 3. Click next and install node
 
 4. Set system variables
 
-   **Name:** NODE_HOME
+   * **Name:** NODE_HOME
 
-   **Value:** C:\Program Files\nodejs
+   * **Value:** C:\Program Files\nodejs
 
 5. Edit in path: C:\Program Files\nodejs\node_modules\npm\bin
 
 6. Go to cmd (administrator mode)
 
-   **Run command:** npm install -g appium
+   * **Run command:** npm install -g appium
 
-   **Rum command:** appium (Allow access if needed > Port will be shown)
+   * **Rum command:** appium (Allow access if needed > Port will be shown)
 
 **Note:** To uninstall appium from command line, Run Command: npm uninstall -g appium
 
-2- Appium Client
+**2- Appium Client**
 
 1. Go to link and download appium client exe file
 
-   **Website Link:** https://github.com/appium/appium-desktop/releases/tag/v1.22.0
+* **Website Link:** https://github.com/appium/appium-desktop/releases/tag/v1.22.0
 
 2. Install appium server
 
@@ -102,7 +102,7 @@ There are two ways to install appium
 ---
 1- Download eclipse for java developers: 
 
-**Website Link:** https://www.eclipse.org/downloads/packages/
+* **Website Link:** https://www.eclipse.org/downloads/packages/
 
 **Note:** To uninstall eclipse, remove every file from PC. For example: Desktop/ Downloads or C:\Users\PakWheels\.eclipse or workspace
 
@@ -113,7 +113,7 @@ There are two ways to install appium
 ---
 1- Install vysor on phone and laptop
 
-**Desktop app link:**  https://www.vysor.io/download/
+* **Desktop app link:**  https://www.vysor.io/download/
 
 2- On the desktop app, start the play button and no need to do anything with mobile application.
 
@@ -128,11 +128,11 @@ There are two ways to install appium
 
 2- Download dependencies (Copy code)
 
-1. Java client: https://mvnrepository.com/artifact/io.appium/java-client
+ * **Java client:** https://mvnrepository.com/artifact/io.appium/java-client
 
-2. Selenium Java: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+ * **Selenium Java:** https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
  
-3. TestNG: https://mvnrepository.com/artifact/org.testng/testng 
+ * **TestNG:** https://mvnrepository.com/artifact/org.testng/testng 
 
 3- Add dependencies in pom.xml under <dependencies> </dependencies>
 
@@ -150,22 +150,22 @@ There are two ways to install testng.
 
 1- Maven dependency
 
-   **Article Link:** https://testng.org/doc/download.html
+   * **Article Link:** https://testng.org/doc/download.html
 
 2-. Eclipse new software
 
 1. Help > install new software > Enter Site URL
 
-2. **Site URL:** https://testng.org/testng-eclipse-update-site 
+   * **Site URL:** https://testng.org/testng-eclipse-update-site 
 
-3. Press enter, it will be installed shortly
+2. Press enter, it will be installed shortly
 
 
 
 
 **8. Connect Real Android Device**
 ---
-**Article:** https://developer.chrome.com/docs/devtools/remote-debugging/
+* **Article:** https://developer.chrome.com/docs/devtools/remote-debugging/
 
 1- Enabling developer options: Settings > About phone > Build number (Tap 7 times)
 
@@ -184,15 +184,15 @@ There are two ways to install testng.
 
 4- To check if device is connected, in cmd (as administrator) run command
 
-**Command:** adb devices
+* **Command:** adb devices
 
 5- To run appium from cmd (as administrator), run command
 
-**Command:** appium
+* **Command:** appium
 
 6- For opening Ui locator, in another cmd (as administrator) run command
 
-**Command:** uiautomatorviewer
+* **Command:** uiautomatorviewer
 
 **Note:** For java class, Delete module-info.java to remove errors
 
@@ -200,36 +200,37 @@ There are two ways to install testng.
 ---
 1- Go to github > Create account > Create new repository 
 
-2- **Website Link:** https://github.com/
+* **Website Link:** https://github.com/
 
 **10. Git**
 ---
 1- Download git
 
-2- **Link:** https://git-scm.com/download/win
+* **Link:** https://git-scm.com/download/win
 
-3- Select next > Windows command prompt
+2- Select next > Windows command prompt
+
+3- Go to eclipse workspace: C:\Users\PakWheels\eclipse-workspace\project-name
+
+4- Go into that folder using cd command
 
 **Commands**
-Go to eclipse workspace: C:\Users\PakWheels\eclipse-workspace\project-name
 
-Go into that folder using cd command
+* git init (hidden file will be created)
 
-git init (hidden file will be created)
+* git config –global user.name “Iqra”
 
-git config –global user.name “Iqra”
+* git config –global user.email “iqra.habib@pakeventures.com”
 
-git config –global user.email “iqra.habib@pakeventures.com”
+* git remote add origin “Github URL”
 
-git remote add origin “Github URL”
+* git add -A OR  git add *
 
-git add -A OR  git add *
+* git status
 
-git status
+* git commit -a OR git commit -m ”Comments”
 
-git commit -a OR git commit -m ”Comments”
-
-git push origin master
+* git push origin master
 
 
 
@@ -239,4 +240,4 @@ git push origin master
 ---
 1- Add maven dependency
 
-**Website Link:** https://mvnrepository.com/artifact/com.aventstack/extentreports
+* **Website Link:** https://mvnrepository.com/artifact/com.aventstack/extentreports
