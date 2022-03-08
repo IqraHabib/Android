@@ -165,45 +165,78 @@ There are two ways to install testng.
 
 **8. Connect Real Android Device**
 ---
-Article: https://developer.chrome.com/docs/devtools/remote-debugging/
-Enabling developer options: Settings > About phone > Build number (Tap 7 times)
-Enable USB debugging: Developer options > Check USB debugging > OK
+**Article:** https://developer.chrome.com/docs/devtools/remote-debugging/
 
-Getting started with Project:
-Right click on eclipse > New > Maven project > Enter project name/ ID
-Right click src/test.java > new > class
-Copy .apk file and paste in src
-To check if device is connected, in cmd (as administrator) run command
-Command: adb devices
-To run appium from cmd (as administrator), run command
-Command: appium
-For opening Ui locator, in another cmd (as administrator) run command
-Command: uiautomatorviewer
-Note: For java class, Delete module-info.java to remove errors
+1- Enabling developer options: Settings > About phone > Build number (Tap 7 times)
+
+2- Enable USB debugging: Developer options > Check USB debugging > OK
+
+
+
+**Getting started with Project:**
+---
+1- Right click on eclipse > New > Maven project > Enter project name/ ID
+
+2- Right click src/test.java > new > class
+
+3- Copy .apk file and paste in src
+
+
+4- To check if device is connected, in cmd (as administrator) run command
+
+**Command:** adb devices
+
+5- To run appium from cmd (as administrator), run command
+
+**Command:** appium
+
+6- For opening Ui locator, in another cmd (as administrator) run command
+
+**Command:** uiautomatorviewer
+
+**Note:** For java class, Delete module-info.java to remove errors
 
 **9. GitHub**
 ---
-Go to github > Create account > Create new repository 
-Website Link: https://github.com/
+1- Go to github > Create account > Create new repository 
+
+2- **Website Link:** https://github.com/
 
 **10. Git**
 ---
-Download git: 
-Link: https://git-scm.com/download/win
-Select next > Windows command prompt
-Commands
-git config –global user.name “Iqra”
-git config –global user.email “iqrahabib477@gmail.com”
-Create a folder in C drive: Pakwheels_Android_Automation
+1- Download git
+
+2- **Link:** https://git-scm.com/download/win
+
+3- Select next > Windows command prompt
+
+**Commands**
+Go to eclipse workspace: C:\Users\PakWheels\eclipse-workspace\project-name
+
 Go into that folder using cd command
+
 git init (hidden file will be created)
+
+git config –global user.name “Iqra”
+
+git config –global user.email “iqra.habib@pakeventures.com”
+
 git remote add origin “Github URL”
+
 git add -A OR  git add *
+
 git status
+
 git commit -a OR git commit -m ”Comments”
+
 git push origin master
+
+
+
+
 
 **11. Extent Reports:**
 ---
-Add maven dependency
-Website Link: https://mvnrepository.com/artifact/com.aventstack/extentreports
+1- Add maven dependency
+
+**Website Link:** https://mvnrepository.com/artifact/com.aventstack/extentreports
